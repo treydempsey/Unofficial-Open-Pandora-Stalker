@@ -1,0 +1,29 @@
+<rss version="2.0">
+    <channel>
+        <title>Open Pandora Unofficial Craig Stalker</title>
+        <link>http://www.open-pandora.org</link>
+        <description>Open Pandora Unofficial Craig Stalker</description>
+        <language>en</language>
+        <image>
+            <url>http://www.talkphp.com/images/misc/rss.jpg</url>
+            <title>Craig Stalker</title>
+            <link>http://www.open-pandora.org</link>
+        </image>
+        <item>
+            <title>mfk commented on Made In China!</title>
+            <link>http://www.gp32x.com/board/index.php?/topic/52655-made-in-china/page__view__findpost__p__831835</link>
+            <description>Yes, they have all other parts to check if the plastic ...</description>
+        </item>
+        <item>
+            <title>mfk commented on Made In China!</title>
+            <link>http://www.gp32x.com/board/index.php?/topic/52655-made-in-china/page__view__findpost__p__831832</link>
+            <description>... felt materials, gaskets and many tiny details.) together for first ...</description>
+        </item>
+        <item>
+            <title>mfk commented on Made In China!</title>
+            <link>http://www.gp32x.com/board/index.php?/topic/52655-made-in-china/page__view__findpost__p__831803</link>
+            <description>Final inspections:
+http://picasaweb.google.com.tr/mfk.pandora/MassProductionSample1?feat=directlink</description>
+        </item>
+    </channel>
+</rss>
