@@ -16,7 +16,7 @@ CREATE INDEX source_properties_idx ON source_properties (source_id, author_id, k
 CREATE INDEX source_properties_author_id_idx ON source_properties (author_id);
 CREATE INDEX source_properties_source_id_idx ON source_properties (source_id);
 
-CREATE TABLE posts(id INTEGER PRIMARY KEY AUTOINCREMENT, source_id INTEGER NOT NULL, author_id INTEGER NOT NULL, key VARCHAR(50), topic VARCHAR(100), posted DATE, link VARCHAR(500), content VARCHAR(2000));
+CREATE TABLE posts(id INTEGER PRIMARY KEY AUTOINCREMENT, source_id INTEGER NOT NULL, author_id INTEGER NOT NULL, key VARCHAR(500), topic VARCHAR(100), posted DATE, link VARCHAR(500), content VARCHAR(2000));
 CREATE INDEX posts_source_id_idx ON posts (source_id);
 CREATE INDEX posts_author_id_idx ON posts (author_id);
 CREATE INDEX posts_posted_idx ON posts (posted);
@@ -33,6 +33,10 @@ INSERT INTO source_properties (author_id, source_id, key, value) VALUES(1, 1, 'm
 INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 1, 'mid', '205');
 INSERT INTO source_properties (author_id, source_id, key, value) VALUES(3, 1, 'mid', '116');
 INSERT INTO source_properties (author_id, source_id, key, value) VALUES(4, 1, 'mid', '9395');
+
+INSERT INTO sources (source) VALUES('Dev Blog');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(-1, 2, 'scraper', 'DevBlogScraper');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 2, 'mid', '205');
 
 INSERT INTO feeds (title, link, description, language, image_url, image_link)
     VALUES(
