@@ -13,21 +13,32 @@ class StalkerSqlQueries
     ";
 
     public static $find_authors_for_source_sql = "
+        SELECT DISTINCT sources.id AS source_id,
+            sources.source,
+            authors.id AS author_id,
+            authors.name
+        FROM sources
+        INNER JOIN source_properties ON sources.id = source_properties.source_id
+        INNER JOIN authors ON source_properties.author_id = authors.id
+        WHERE sources.id = ?
+    ";
+
+    public static $find_property_for_source_author_sql = "
         SELECT sources.id AS source_id,
             sources.source,
             authors.id AS author_id,
             authors.name,
-            value AS mid
-        FROM sources
+            key AS property,
+            value
+        FROM source_properties
+        INNER JOIN sources ON source_properties.source_id = sources.id
         INNER JOIN authors ON source_properties.author_id = authors.id
-        INNER JOIN source_properties ON sources.id = source_properties.source_id
-            AND authors.id = source_properties.author_id
-        WHERE sources.source = 'GP2X'
-            AND key = 'mid'
-            AND sources.id = ?
+        WHERE sources.id = ?
+            AND authors.id = ?
+            AND source_properties.key = ?
     ";
 
-    public static $find_post_sql = "
+    public static $find_post_for_source_author_sql = "
         SELECT source_id, author_id, topic, posted, link, content
         FROM posts
         INNER JOIN sources ON posts.source_id = ?

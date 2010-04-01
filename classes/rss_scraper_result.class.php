@@ -1,6 +1,6 @@
 <?php
 
-class RssScraperEntry
+class RssScraperResult
 {
     public $topic, $key, $link, $posted, $content;
 
