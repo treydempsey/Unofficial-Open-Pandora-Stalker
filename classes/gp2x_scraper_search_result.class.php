@@ -11,9 +11,9 @@ class Gp2xScraperSearchResult
 
     public function __construct($args)
     {
-        $this->topic = $args['topic'];
-        $this->key = $args['key'];
-        $this->link = $args['link'];
+        foreach($args as $arg => $value) {
+            $this->$arg = $value;
+        }
     }
 
     public function enrich()
