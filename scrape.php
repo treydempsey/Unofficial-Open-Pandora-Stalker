@@ -2,73 +2,76 @@
 
 set_include_path('classes');
 
-require_once 'classes/db.class.php';
-require_once 'classes/db_user.class.php';
-require_once 'classes/db_post.class.php';
-require_once 'classes/db_feed.class.php';
-require_once 'classes/db_source.class.php';
-require_once 'classes/db_feed_source.class.php';
-require_once 'classes/db_user_source.class.php';
-
 require_once 'gp2x_scraper.class.php';
 require_once 'gp2x_scraper_search_result.class.php';
+require_once 'stalker_rss.class.php';
+require_once 'stalker_sql_queries.class.php';
 
-$connection = new PDO('sqlite:db.sqlite3');
+$db = new PDO('sqlite:db.sqlite3');
+$new_posts = 0;
+$enrich_failures = 0;
 
-// GP2X Forum
-$scraper = new Gp2xScraper();
+$sources_st = $db->prepare(StalkerSqlQueries::$find_sources_sql);
+$authors_st = $db->prepare(StalkerSqlQueries::$find_authors_for_source_sql);
+$find_post_st = $db->prepare(StalkerSqlQueries::$find_post_sql);
+$create_post_st = $db->prepare(StalkerSqlQueries::$create_post_sql);
 
-$find_users_for_source_sql = "
-    SELECT sources.id AS source_id,
-        users.id AS user_id,
-        users.name,
-        user_sources.*
-    FROM sources
-    INNER JOIN user_sources ON sources.id = user_sources.source_id
-    INNER JOIN users ON user_sources.user_id = users.id
-    WHERE sources.source = 'Pandora Forum'
-";
+$sources_st->execute();
+$sources = $sources_st->fetchAll(PDO::FETCH_ASSOC);
+if(count($sources) > 0) {
+    foreach($sources as $source) {
+        $scraper_class_name = $source['scraper'];
 
-$find_post_sql = "
-    SELECT source_id, user_id, topic, posted, link, content
-    FROM posts
-    INNER JOIN sources ON posts.source_id = ?
-    WHERE post_key = ?
-";
-$find_post_st = $connection->prepare($find_post_sql);
+        $authors_st->execute(array($source['source_id']));
+        $authors = $authors_st->fetchAll(PDO::FETCH_ASSOC);
+        if($authors) {
+            foreach($authors as $author) {
+                $scraper = new $scraper_class_name;
+                $scraper->author_id($author['mid']);
+                $scraper->scrape();
 
-$create_post_sql = "
-    INSERT INTO posts (source_id, user_id, post_key, topic, posted, link, content)
-    VALUES(?, ?, ?, ?, ?, ?, ?)
-";
-$create_post_st = $connection->prepare($create_post_sql);
-
-
-foreach($connection->query($find_users_for_source_sql) as $user) {
-    $scraper->mid($user['mid']);
-    $scraper->scrape();
-    print_r($scraper->search_results) . "\n";
-
-
-    foreach($scraper->search_results as $search_result) {
-        echo "find_post_st(" . $user['source_id'] . ", " . $search_result->key . ")\n";
-        $find_post_st->execute(array($user['source_id'], $search_result->key));
-        $post = $find_post_st->fetch(PDO::FETCH_ASSOC);
-        if($post == FALSE) {
-            # Fetch more data about the post
-            echo "Enriching the post\n";
-            if($search_result->enrich()) {
-                echo "Creating post\n";
-                $create_post_st->execute(array($user['source_id'], $user['user_id'],
-                    $search_result->key, $search_result->topic, $search_result->posted,
-                    $search_result->link, $search_result->content));
+                foreach($scraper->search_results as $search_result) {
+                    echo "find_post_st(" . $author['source_id'] . ", " . $search_result->key . ")\n";
+                    $find_post_st->execute(array($author['source_id'], $author['author_id'], $search_result->key));
+                    $post = $find_post_st->fetch(PDO::FETCH_ASSOC);
+                    if($post == FALSE) {
+                        # Fetch more data about the post
+                        if($search_result->enrich()) {
+                            echo "Creating post\n";
+                            $new_posts += 1;
+                            $create_post_st->execute(array(
+                                $author['source_id'], $author['author_id'],
+                                $search_result->key, $search_result->topic, $search_result->posted,
+                                $search_result->link, $search_result->content
+                            ));
+                        }
+                        else {
+                          $enrich_failures += 1;
+                          echo "ERROR: Could not fetch post\n";
+                          echo "\t" . $post->link . "\n";
+                        }
+                    }
+                    else {
+                        echo "Post exists.\n";
+                    }
+                }
+                unset($scraper);
             }
         }
-        else {
-            echo "Post exists:\n";
-            print_r($post) . "\n";
-        }
     }
+}
+
+echo "\n";
+echo "Post Enrichment Failures: $enrich_failures\n";
+echo "New Posts: $new_posts\n";
+
+if($new_posts > 0) {
+    echo "Writing to feed.rss\n";
+    $rss = new StalkerRss($db);
+    $rss->generate();
+    $feed_rss = fopen('feed.rss', 'w');
+    fwrite($feed_rss, $rss->xml());
+    fclose($feed_rss);
 }
 
 ?>

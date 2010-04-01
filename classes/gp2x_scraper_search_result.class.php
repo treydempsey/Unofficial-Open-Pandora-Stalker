@@ -6,6 +6,9 @@ class Gp2xScraperSearchResult
 {
     public $topic, $key, $link, $posted, $content;
 
+    protected $html;
+    protected $enriched = FALSE;
+
     public function __construct($args)
     {
         $this->topic = $args['topic'];
@@ -15,8 +18,22 @@ class Gp2xScraperSearchResult
 
     public function enrich()
     {
-        $html = file_get_html($this->link);
-        $post = $html->find("div#post_id_" . $this->key);
+        $page_fetches = 0;
+        while($this->enriched == FALSE && isset($this->link) && $page_fetches < 5) {
+            $this->scrape_page();
+            $this->enriched = isset($this->topic) && isset($this->key) && isset($this->link) && isset($this->posted) && isset($this->content);
+        }
+        unset($this->html);
+
+        return $this->enriched;
+    }
+
+    protected function scrape_page()
+    {
+        echo "Enriching from " . $this->link . "\n";
+        $this->html = file_get_html($this->link);
+
+        $post = $this->html->find("div#post_id_" . $this->key);
         if(count($post) == 1) {
             $published = $post[0]->find("abbr.published");
             if(count($published) == 1) {
@@ -30,8 +47,17 @@ class Gp2xScraperSearchResult
                 $this->content = preg_replace("/<!--.*?-->/", "", trim($content[0]->innertext), -1);
             }
         }
-
-        return isset($this->topic) && isset($this->key) && isset($this->link) && isset($this->posted) && isset($this->content);
+        else {
+            // Post isn't on the current page, try a previous page
+            $previous_page = $this->html->find("a[title='Previous Page']");
+            if(count($previous_page) > 0) {
+                $this->link = $previous_page[0]->href;
+            }
+            else {
+                // No previous page link
+                unset($this->link);
+            }
+        }
     }
 }
 

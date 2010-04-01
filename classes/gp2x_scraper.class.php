@@ -12,6 +12,11 @@ class Gp2xScraper
         $this->search_base = 'http://www.gp32x.com/board/index.php?app=core&module=search&do=user_posts&mid=';
     }
 
+    public function __destruct()
+    {
+        unset($this->search_results);
+    }
+
     public function scrape()
     {
         echo "Scraping " . $this->current_url . "\n";
@@ -46,7 +51,7 @@ class Gp2xScraper
         }
     }
 
-    public function mid($mid)
+    public function author_id($mid)
     {
         $this->current_url = $this->search_base . $mid;
     }
