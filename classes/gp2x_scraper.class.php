@@ -1,20 +1,21 @@
 <?php
 
 require_once 'simple_html_dom.php';
+require_once 'gp2x_scraper_result.class.php';
 
 class Gp2xScraper
 {
-    public $current_url, $search_results, $search_base;
+    public $current_url, $results, $search_base;
 
     public function __construct()
     {
-        $this->search_results = array();
+        $this->results = array();
         $this->search_base = 'http://www.gp32x.com/board/index.php?app=core&module=search&do=user_posts&mid=';
     }
 
     public function __destruct()
     {
-        unset($this->search_results);
+        unset($this->results);
     }
 
     public function scrape()
@@ -43,7 +44,7 @@ class Gp2xScraper
                 }
             }
 
-            array_push($this->search_results, new Gp2xScraperSearchResult(array(
+            array_push($this->results, new Gp2xScraperResult(array(
                 'topic' => $topic,
                 'key' => $key,
                 'link' => $link
@@ -54,14 +55,6 @@ class Gp2xScraper
     public function author_id($mid)
     {
         $this->current_url = $this->search_base . $mid;
-    }
-
-    public function display_search_results()
-    {
-        foreach($this->search_results as $result)
-        {
-            print_r($result);
-        }
     }
 }
 

@@ -1,21 +1,21 @@
 <?php
 
 require_once 'simple_html_dom.php';
-require_once 'rss_scraper_entry.class.php';
+require_once 'rss_scraper_result.class.php';
 
 class RssScraper
 {
-    public $current_url, $xml, $rss_entries;
+    public $current_url, $xml, $rss_results;
 
     public function __construct()
     {
-        $this->rss_entries = array();
+        $this->rss_results = array();
         date_default_timezone_set('GMT');
     }
 
     public function __destruct()
     {
-        unset($this->rss_entries);
+        unset($this->rss_results);
         unset($this->xml);
     }
 
@@ -62,7 +62,7 @@ class RssScraper
                     }
 
                     if(isset($topic) && isset($key) && isset($link) && isset($posted) && isset($content)) {
-                        array_push($this->rss_entries, new RssScraperEntry(array(
+                        array_push($this->rss_results, new RssScraperResult(array(
                             'topic' => $topic,
                             'key' => $key,
                             'link' => $link,

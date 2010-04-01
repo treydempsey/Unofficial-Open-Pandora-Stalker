@@ -2,7 +2,7 @@
 
 require_once 'simple_html_dom.php';
 
-class Gp2xScraperSearchResult
+class Gp2xScraperResult
 {
     public $topic, $key, $link, $posted, $content;
 
