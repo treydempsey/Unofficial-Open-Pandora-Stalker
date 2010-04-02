@@ -37,37 +37,31 @@ class RssScraper
         $this->xml->load($this->current_url);
         if($this->xml) {
             foreach($this->xml->getElementsByTagName('item') as $item) {
-                echo "Found item\n";
                 $element = $item->getElementsByTagName('title');
                 if($element) {
                     $topic = $element->item(0)->nodeValue;
-                    echo "topic: $topic\n";
                 }
 
                 $element = $item->getElementsByTagName('guid');
                 if(count($element) == 1) {
                     $key = $element->item(0)->nodeValue;
-                    echo "key: $key\n";
                 }
 
                 $element = $item->getElementsByTagName('link');
                 if(count($element) == 1) {
                     $link = $element->item(0)->nodeValue;
-                    echo "link: $link\n";
                 }
 
                 $element = $item->getElementsByTagName('description');
                 if(count($element) == 1) {
                     $content = $element->item(0)->nodeValue;
                     $content = preg_replace('/<!\[CDATA\[(.*?)\]\]>/', '\1', $content, -1);
-                    echo "content: $content\n";
                 }
 
                 $element = $item->getElementsByTagName('pubDate');
                 if(count($element) == 1) {
                     $posted = strtotime($element->item(0)->nodeValue);
                     $posted = date('Y-m-d H:i:s', $posted);
-                    echo "posted: $posted\n";
                 }
 
                 if(isset($topic) && isset($key) && isset($link) && isset($posted) && isset($content)) {

@@ -52,7 +52,7 @@ class StalkerSqlQueries
 
     public static $find_feeds_sql = "
         SELECT feeds.id AS feed_id, feeds.title, feeds.link, feeds.description, feeds.image_url,
-            feeds.image_title, feeds.image_link, feeds.language
+            feeds.image_link, feeds.language
         FROM feeds
         ORDER BY feeds.title
     ";

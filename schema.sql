@@ -57,3 +57,6 @@ INSERT INTO feeds (title, link, description, language, image_url, image_link)
         'http://www.open-pandora.org/'
     );
 INSERT INTO feed_sources (source_id, feed_id) VALUES(1, 1);
+INSERT INTO feed_sources (source_id, feed_id) VALUES(2, 1);
+INSERT INTO feed_sources (source_id, feed_id) VALUES(3, 1);
+INSERT INTO feed_sources (source_id, feed_id) VALUES(4, 1);

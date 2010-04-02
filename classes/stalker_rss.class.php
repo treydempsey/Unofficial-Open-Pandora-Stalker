@@ -22,6 +22,7 @@ class StalkerRss
     public function generate()
     {
         $find_posts_for_feed_st = $this->db->prepare(StalkerSqlQueries::$find_posts_for_feed_sql . ' LIMIT ' . $this->item_limit);
+        echo StalkerSqlQueries::$find_feeds_sql . "\n";
         $feeds = $this->db->query(StalkerSqlQueries::$find_feeds_sql);
         if($feeds) {
             foreach($feeds as $feed) {
