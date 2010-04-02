@@ -5,7 +5,7 @@ require_once('stalker_sql_queries.class.php');
 class StalkerRss
 {
     public $db;
-    public $item_limit = 100;
+    public $item_limit = 500;
 
     public $doc;
     public $rss;
@@ -21,18 +21,18 @@ class StalkerRss
 
     public function generate()
     {
-        $find_posts_st = $this->db->prepare(StalkerSqlQueries::$find_posts_sql . ' LIMIT ' . $this->item_limit);
+        $find_posts_for_feed_st = $this->db->prepare(StalkerSqlQueries::$find_posts_for_feed_sql . ' LIMIT ' . $this->item_limit);
         $feeds = $this->db->query(StalkerSqlQueries::$find_feeds_sql);
         if($feeds) {
             foreach($feeds as $feed) {
                 $channel = $this->add_channel($feed['title'], $feed['link'], $feed['description'], $feed['language']);
                 $this->add_image_to_channel($channel, $feed['image_url'], $feed['title'], $feed['image_link']);
 
-                if($find_posts_st->execute(array($feed['source_id']))) {
-                    while($post = $find_posts_st->fetch(PDO::FETCH_ASSOC)) {
+                if($find_posts_for_feed_st->execute(array($feed['feed_id']))) {
+                    while($post = $find_posts_for_feed_st->fetch(PDO::FETCH_ASSOC)) {
                         $this->add_item_to_channel(
                             $channel,
-                            $feed['source'] . ': ' . $post['author'] . ' commented on ' . $post['topic'],
+                            $post['source'] . ': ' . $post['topic'],
                             $post['link'],
                             $post['content'],
                             date('D, d M o G:i:s T', strtotime($post['posted']))

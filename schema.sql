@@ -29,14 +29,23 @@ INSERT INTO authors (name) VALUES('mfk');
 INSERT INTO authors (name) VALUES('Evil Dragon');
 INSERT INTO authors (name) VALUES('craigix');
 INSERT INTO authors (name) VALUES('Michael Weston');
-INSERT INTO source_properties (author_id, source_id, key, value) VALUES(1, 1, 'mid', '6611');
-INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 1, 'mid', '205');
-INSERT INTO source_properties (author_id, source_id, key, value) VALUES(3, 1, 'mid', '116');
-INSERT INTO source_properties (author_id, source_id, key, value) VALUES(4, 1, 'mid', '9395');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(1, 1, 'author_key', '6611');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 1, 'author_key', '205');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(3, 1, 'author_key', '116');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(4, 1, 'author_key', '9395');
 
 INSERT INTO sources (source) VALUES('Dev Blog');
 INSERT INTO source_properties (author_id, source_id, key, value) VALUES(-1, 2, 'scraper', 'DevBlogScraper');
-INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 2, 'mid', '205');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 2, 'author_key', '205');
+
+INSERT INTO sources (source) VALUES('Twitter');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(-1, 3, 'scraper', 'TwitterScraper');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(3, 3, 'author_key', 'statuses/user_timeline/19534812.rss');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 3, 'author_key', 'statuses/user_timeline/108433145.rss');
+
+INSERT INTO sources (source) VALUES('Youtube');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(-1, 4, 'scraper', 'YoutubeScraper');
+INSERT INTO source_properties (author_id, source_id, key, value) VALUES(2, 4, 'author_key', 'http://gdata.youtube.com/feeds/base/users/EvilDragon1717/uploads?alt=rss&amp;v=2&amp;orderby=published&amp;client=ytapi-youtube-profile');
 
 INSERT INTO feeds (title, link, description, language, image_url, image_link)
     VALUES(

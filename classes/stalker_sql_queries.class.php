@@ -51,20 +51,19 @@ class StalkerSqlQueries
     ";
 
     public static $find_feeds_sql = "
-        SELECT feed_id, feeds.title, feeds.link, feeds.description, feeds.image_url,
-            feeds.image_title, feeds.image_link, feeds.language, source_id, source
-        FROM feed_sources
-        INNER JOIN feeds ON feed_sources.feed_id = feeds.id
-        INNER JOIN sources ON feed_sources.source_id = sources.id
-        ORDER BY feeds.title, sources.source
+        SELECT feeds.id AS feed_id, feeds.title, feeds.link, feeds.description, feeds.image_url,
+            feeds.image_title, feeds.image_link, feeds.language
+        FROM feeds
+        ORDER BY feeds.title
     ";
 
-    public static $find_posts_sql = "
-        SELECT authors.name AS author, posts.topic, posts.posted, posts.link, posts.content
+    public static $find_posts_for_feed_sql = "
+        SELECT posts.source_id, sources.source, authors.name AS author, posts.topic, posts.posted, posts.link, posts.content
         FROM posts
         INNER JOIN sources ON posts.source_id = sources.id
+        INNER JOIN feed_sources ON posts.source_id = feed_sources.source_id
         INNER JOIN authors ON posts.author_id = authors.id
-        WHERE sources.id = ?
+        WHERE feed_sources.feed_id = ?
         ORDER BY posts.posted DESC
     ";
 }

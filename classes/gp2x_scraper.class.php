@@ -8,7 +8,8 @@ class Gp2xScraper
 {
     public $db, $find_authors_for_source_st, $find_post_for_source_author_st, $find_property_for_source_author_st, $create_post_st;
     public $source_id, $current_url, $results, $search_base;
-    public $new_posts, $enrich_failures;
+    public $new_posts = 0;
+    public $scrape_failures = 0;
 
     public function __construct($args = array())
     {
@@ -21,8 +22,6 @@ class Gp2xScraper
         $this->find_property_for_source_author_st = $this->db->prepare(StalkerSqlQueries::$find_property_for_source_author_sql);
         $this->create_post_st = $this->db->prepare(StalkerSqlQueries::$create_post_sql);
         $this->search_base = 'http://www.gp32x.com/board/index.php?app=core&module=search&do=user_posts&mid=';
-        $this->new_posts = 0;
-        $this->enrich_failures = 0;
     }
 
     public function __destruct()
@@ -95,7 +94,7 @@ class Gp2xScraper
                             ));
                         }
                         else {
-                          $this->enrich_failures += 1;
+                          $this->scrape_failures += 1;
                           echo "ERROR: Could not fetch post\n";
                           echo "\t" . $result->link . "\n";
                         }
