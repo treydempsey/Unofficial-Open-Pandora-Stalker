@@ -1,11 +1,12 @@
 <?php
 
-require_once 'simple_html_dom.php';
+require_once 'html_dom_web_page.class.php';
 
 class Gp2xScraperResult
 {
     public $topic, $key, $link, $posted, $content;
 
+    protected $page;
     protected $html;
     protected $enriched = FALSE;
 
@@ -24,6 +25,7 @@ class Gp2xScraperResult
             $this->enriched = isset($this->topic) && isset($this->key) && isset($this->link) && isset($this->posted) && isset($this->content);
         }
         unset($this->html);
+        unset($this->page);
 
         return $this->enriched;
     }
@@ -31,7 +33,8 @@ class Gp2xScraperResult
     protected function scrape_page()
     {
         echo "Enriching from " . $this->link . "\n";
-        $this->html = file_get_html($this->link);
+        $this->page = new HtmlDomWebPage(array('url' => $this->link));
+        $this->html = $this->page->load_file();
 
         $post = $this->html->find("div#post_id_" . $this->key);
         if(count($post) == 1) {

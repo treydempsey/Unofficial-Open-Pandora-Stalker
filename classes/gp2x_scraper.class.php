@@ -1,8 +1,8 @@
 <?php
 
-require_once 'simple_html_dom.php';
-require_once 'gp2x_scraper_result.class.php';
-require_once 'stalker_sql_queries.class.php';
+require_once('html_dom_web_page.class.php');
+require_once('gp2x_scraper_result.class.php');
+require_once('stalker_sql_queries.class.php');
 
 class Gp2xScraper
 {
@@ -44,7 +44,8 @@ class Gp2xScraper
                     $this->current_url = $this->search_base . $author_key['value'];
 
                     echo "Scraping " . $this->current_url . "\n";
-                    $html = file_get_html($this->current_url);
+                    $page = new HtmlDomWebPage(array('url' => $this->current_url));
+                    $html = $page->load_file();
 
                     # Each post is identified by a table row with a class of 'row1'
                     foreach($html->find('tr.row1') as $row) {
