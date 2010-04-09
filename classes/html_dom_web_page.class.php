@@ -9,8 +9,8 @@ class HtmlDomWebPage
 
     public function __construct($args = array())
     {
-        foreach($args as $arg) {
-            $this->$arg = $args[$arg];
+        foreach($args as $key => $value) {
+            $this->$key = $value;
         }
 
         $this->dom = new simple_html_dom();
@@ -23,7 +23,7 @@ class HtmlDomWebPage
 
     public function load_file()
     {
-        $this->dom->load_file($this->$url);
+        $this->dom->load_file($this->url);
         return $this->dom;
     }
 }
