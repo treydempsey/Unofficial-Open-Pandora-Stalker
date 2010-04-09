@@ -1,6 +1,6 @@
 <?php
 
-require_once('html_dom_web_page.class.php');
+require_once('web_page.class.php');
 require_once('gp2x_scraper_result.class.php');
 require_once('stalker_sql_queries.class.php');
 
@@ -13,6 +13,9 @@ class Gp2xScraper
 
     public function __construct($args = array())
     {
+        $this->web_page_class = WebPage;
+        $this->search_base = 'http://www.gp32x.com/board/index.php?app=core&module=search&do=user_posts&mid=';
+
         foreach($args as $arg => $value) {
             $this->$arg = $value;
         }
@@ -21,7 +24,6 @@ class Gp2xScraper
         $this->find_post_for_source_author_st = $this->db->prepare(StalkerSqlQueries::$find_post_for_source_author_sql);
         $this->find_property_for_source_author_st = $this->db->prepare(StalkerSqlQueries::$find_property_for_source_author_sql);
         $this->create_post_st = $this->db->prepare(StalkerSqlQueries::$create_post_sql);
-        $this->search_base = 'http://www.gp32x.com/board/index.php?app=core&module=search&do=user_posts&mid=';
     }
 
     public function __destruct()
@@ -44,7 +46,7 @@ class Gp2xScraper
                     $this->current_url = $this->search_base . $author_key['value'];
 
                     echo "Scraping " . $this->current_url . "\n";
-                    $page = new HtmlDomWebPage(array('url' => $this->current_url));
+                    $page = new $this->web_page_class(array('url' => $this->current_url));
                     $html = $page->load_file();
 
                     # Each post is identified by a table row with a class of 'row1'
@@ -70,6 +72,7 @@ class Gp2xScraper
 
                         if(isset($topic) && isset($key) && isset($link)) {
                             array_push($this->results, new Gp2xScraperResult(array(
+                                'web_page_class' => $this->web_page_class,
                                 'topic' => $topic,
                                 'key' => $key,
                                 'link' => $link

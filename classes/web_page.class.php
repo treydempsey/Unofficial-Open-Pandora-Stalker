@@ -1,8 +1,9 @@
 <?php
+
 require_once 'simple_html_dom.php';
 
 /* This class wraps fetching web pages and parsing the dom. */
-class HtmlDomWebPage
+class WebPage
 {
     public $url;
     public $dom;
