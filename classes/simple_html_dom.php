@@ -36,6 +36,8 @@ define('HDOM_INFO_ENDSPACE',7);
 function file_get_html() {
     $dom = new simple_html_dom;
     $args = func_get_args();
+    //print_r("\nfile_get_html line 39 simple html dom\n");
+    //print_r($args);
     $dom->load(call_user_func_array('file_get_contents', $args), true);
     return $dom;
 }
@@ -67,6 +69,8 @@ function dump_html_tree($node, $show_attr=true, $deep=0) {
 function file_get_dom() {
     $dom = new simple_html_dom;
     $args = func_get_args();
+     //print_r("\nfile_get_dom line 72 simple html dom\n");
+    //print_r($args);
     $dom->load(call_user_func_array('file_get_contents', $args), true);
     return $dom;
 }
@@ -547,12 +551,71 @@ class simple_html_dom {
         while ($this->parse());
         // end
         $this->root->_[HDOM_INFO_END] = $this->cursor;
+        
     }
 
     // load html from file
     function load_file() {
         $args = func_get_args();
-        $this->load(call_user_func_array('file_get_contents', $args), true);
+        
+        $fileinput = call_user_func_array('file_get_contents', $args);
+        if(strpos($args[0],'gp32x.com') !== false){//if this is gp32x.com, otherwise we might mess up our document.
+          $fileinput = $this->cleanPage($fileinput);  
+        }
+        $this->load($fileinput, true);
+        unset($fileinput);
+    }
+    function removeScripts($input){
+        return preg_replace('/\<script\>(.+?)\<\/script>/imsX', '',$input);//regex remove script tags.
+    }
+    function removeHugeSpaces($input){
+        $input = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "\n", $input);//don't worry, it just removes huge spaces...
+        $input = preg_replace('/\>[(\s|\r|\n|\t|\h|\v| )]+\</ims', ">\n<",$input);
+        return preg_replace('/[ \t\r]+/imsX', " ", html_entity_decode($input));
+    }
+    function removeHTMLStyling($input){
+        //cleans out the html settings we don't care about.
+        $filtered = preg_replace('/(border|onclick|bgcolor|cellspacing|color|cellpadding|width|height|style|background|colspan|rowspan|align|valign|on[a-zA-Z]+)+\=\'([_a-z=\"\\\'\\\\A-Z\s\.\/\:\#0-9 \d\s\w =\`\'\"\/\:\.\;\%\(\)\{\}\[\]\!\"]+?)\'/imsX', ' ',$input);
+        $filtered = preg_replace('/(border|onclick|bgcolor|cellspacing|color|cellpadding|width|height|style|background|colspan|rowspan|align|valign|on[a-zA-Z]+)+\=\"([_a-z=\"\\\'\\\\A-Z\s\.\/\:\#0-9 \d\s\w =\`\'\/\:\.\;\%\(\)\{\}\[\]\!\\\'\-\,]+?)\"/imsX', ' ',$filtered);
+        $filtered = preg_replace('/(border|onclick|bgcolor|cellspacing|color|cellpadding|width|height|style|background|colspan|rowspan|align|valign|on[a-zA-Z]+)+\=([_a-z=\"\\\'\\\\A-Z\s\.\/\:\#0-9 \d\s\w =\`\'\"\/\:\.\;\%]+?)\>/imsX', '>',$filtered);
+        return $filtered;
+    }
+    function cleanPage($input){
+        //might be the longest function here actually... but it does work VERY wel.
+        $input = $this->removeScripts($input);//take out scripts.
+        $input = $this->removeHTMLStyling($input);//take out styles and such but retain id, clas, name, etc.
+        $input = $this->removeHugeSpaces($input);//take out big whitespaces.
+        $input = preg_replace('/\<\/*(meta|br|link|style|script|center|img|font|bgsound|embed|applet|strong)[_a-z=\"\\\'\\\\A-Z\s\.\/\:\#0-9 \d\s\w =\`\'\"\/\:\.\;\%\(\)\!]*\>/imsU', ' ',$input);
+        //take out the crap html we don't care about.
+        $input = preg_replace('/\<\/*script[\d\s\w =\`\'\"\/\:\.]*>/imsU', '', $input);
+        //clean out side thing
+        $input = $this->removeHugeSpaces($input);
+        //$input = preg_replace('/\<\/*a[\d\s\w =\`\'\"\/\:\.]*>/imsU', '', $input);
+        $input = strip_tags($input, "<table><tr><td><a><div><span><abbr><p>");
+        //$input = preg_replace('/<\/*a>/ims', '',$input);
+        //cleaned out those useless a tags.
+        //Now to clean out the empty tables...
+        for($x = 0; $x < 40; $x++){
+            $cur = $input;
+            //since there can be empty tables multiple times we need clear them out.
+        $input = preg_replace('/<\s*td(\s*(class|id|name)\="([\d\D]*?)")*\s*>\s*\<\/td>/ims', ' ',$input);
+        $input = preg_replace('/<\s*tr(\s*(class|id|name)\="([\d\D]*?)")*\s*>\s*\<\/tr>/ims', ' ',$input);
+        $input = preg_replace('/<\s*table(\s*(class|id|name)\="([\d\D]*?)")*\s*>\s*\<\/table>/ims', ' ', $input);
+        $input = preg_replace('/\<(td|span)?\>\s*(.*?)\s*<\/(td|span)?>/ims', '<$1>$2</$3>', $input);
+        $input = preg_replace('/<(td|table|a|span|div|tr)?\s+>/ims', '<$1>',$input);
+        $input = preg_replace('/<a>([\d\D]*?)<\/a>/ims', '$1', $input);
+        $input = preg_replace('/<span>([\d\D]*?)<\/span>/ims', '$1', $input);
+        $input = preg_replace('/<(td|div|span|a|tr|table)?\s+(class|id|name)?=([^\"][a-zA-Z0-9%]+[^\"])?\s*>/ims', '<$1 $2="$3">',$input);
+        //oh and while we are at it... we can clean up the HTML. No need for stuff like <span>blah</span> when the span does nothing...
+        $input = $this->removeHugeSpaces($input);
+        if($input == $cur){
+            $x = 80000;
+        }
+        //echo $x." ";
+        }
+        $input = trim($input);
+        $input = preg_replace('/\n+/ims', '',$input);
+        return $input;
     }
 
     // set callback function
@@ -970,6 +1033,16 @@ class simple_html_dom {
     function getElementsById($id, $idx=null) {return $this->find("#$id", $idx);}
     function getElementByTagName($name) {return $this->find($name, 0);}
     function getElementsByTagName($name, $idx=-1) {return $this->find($name, $idx);}
-    function loadFile() {$args = func_get_args();$this->load(call_user_func_array('file_get_contents', $args), true);}
+    function loadFile() {
+        $args = func_get_args();
+        $ctx = stream_context_create(array(
+            'http' => array('timeout' => 2)
+            )
+        );
+       // print_r($args);
+        //print_r("\nfile_get_dom line 986 simple html dom\n");
+    $this->load(call_user_func_array('file_get_contents', $args), true);
+    
+    }
 }
 ?>

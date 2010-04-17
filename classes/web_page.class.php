@@ -25,6 +25,7 @@ class WebPage
     public function load_file()
     {
         $this->dom->load_file($this->url);
+        
         return $this->dom;
     }
 }

@@ -32,9 +32,29 @@ class RssScraper
 
     public function scrape()
     {
+        if(VERBOSE)
         echo "Scraping " . $this->current_url . "\n";
         $this->xml = new DOMDocument();
-        $this->xml->load($this->current_url);
+        //doing a quick changup instead of using DOM to load it, I'm going to have a timeout because sometimes ED's server doesn't respond :(
+            $ctx = stream_context_create(array(
+            'http' => array('timeout' => 5)
+            )
+        );
+        if(strpos($this->current_url, "open-pandora.org") !== false){
+            $errorlev = error_reporting();
+            error_reporting(E_ERROR);//keep it clean, no warnings.. I know I know..
+            $contents = file_get_contents($this->current_url,0,$ctx);
+            if(strlen(trim($contents))> 4){
+               $this->xml->loadXML($contents);
+               //echo substr($contents,0,400);
+            }else{
+                echo '      Failure, OpenPandora\'s server is down. :( '."\n";
+            }
+            error_reporting($errorlev);
+        }else{
+            $this->xml->load($this->current_url);
+        }
+        
         if($this->xml) {
             foreach($this->xml->getElementsByTagName('item') as $item) {
                 $element = $item->getElementsByTagName('title');
@@ -62,6 +82,7 @@ class RssScraper
                 if(count($element) == 1) {
                     $posted = strtotime($element->item(0)->nodeValue);
                     $posted = date('Y-m-d H:i:s', $posted);
+                    
                 }
 
                 if(isset($topic) && isset($key) && isset($link) && isset($posted) && isset($content)) {
@@ -79,11 +100,12 @@ class RssScraper
             }
 
             foreach($this->results as $result) {
+                if(VERBOSE)
                 echo "find_post_st(" . $this->source_id . ", " . $this->author_id . ", " . $result->key . ")\n";
                 $this->find_post_for_source_author_st->execute(array($this->source_id, $this->author_id, $result->key));
                 $post = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                 if($post == FALSE) {
-                    echo "Creating post.\n";
+                    echo "  &nbsp;&nbsp;&nbsp;&nbsp;Creating post. ",$result->topic,"<br />\n";
                     $this->new_posts += 1;
                     $this->create_post_st->execute(array(
                         $this->source_id, $this->author_id,
@@ -92,6 +114,7 @@ class RssScraper
                     ));
                 }
                 else {
+                    if(VERBOSE)
                     echo "Post exists.\n";
                 }
             }

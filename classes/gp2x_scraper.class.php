@@ -13,7 +13,7 @@ class Gp2xScraper
 
     public function __construct($args = array())
     {
-        $this->web_page_class = WebPage;
+        $this->web_page_class =  new WebPage;
         $this->search_base = 'http://www.gp32x.com/board/index.php?app=core&module=search&do=user_posts&mid=';
 
         foreach($args as $arg => $value) {
@@ -44,8 +44,9 @@ class Gp2xScraper
                 $author_key = $this->find_property_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                 if($author_key) {
                     $this->current_url = $this->search_base . $author_key['value'];
-
+                    if(VERBOSE)
                     echo "Scraping " . $this->current_url . "\n";
+                    
                     $page = new $this->web_page_class(array('url' => $this->current_url));
                     $html = $page->load_file();
 
@@ -79,16 +80,19 @@ class Gp2xScraper
                             )));
                         }
                     }
+                    $html->clear();
                 }
 
                 # Lookup each search result in the db, enrich and save if it doesn't exist
                 foreach($this->results as $result) {
+                    if(VERBOSE)
                     echo "find_post_st(" . $author['source_id'] . ", " . $result->key . ")\n";
                     $this->find_post_for_source_author_st->execute(array($author['source_id'], $author['author_id'], $result->key));
                     $post = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                     if($post == FALSE) {
                         # Fetch more data about the post
                         if($result->enrich()) {
+                            if(VERBOSE)
                             echo "Creating post\n";
                             $this->new_posts += 1;
                             $this->create_post_st->execute(array(
@@ -104,9 +108,11 @@ class Gp2xScraper
                         }
                     }
                     else {
+                        if(VERBOSE)
                         echo "Post exists.\n";
                     }
                 }
+                
             }
         }
     }

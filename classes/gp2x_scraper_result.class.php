@@ -33,6 +33,7 @@ class Gp2xScraperResult
 
     protected function scrape_page()
     {
+        if(VERBOSE)
         echo "Enriching from " . $this->link . "\n";
         $this->page = new $this->web_page_class(array('url' => $this->link));
         $this->html = $this->page->load_file();
