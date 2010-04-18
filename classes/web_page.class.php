@@ -19,6 +19,7 @@ class WebPage
 
     public function __destruct()
     {
+$this->dom->clear();
         unset($this->dom);
     }
 

@@ -56,21 +56,33 @@ class RssScraper
         }
         
         if($this->xml) {
+            
             foreach($this->xml->getElementsByTagName('item') as $item) {
+                
                 $element = $item->getElementsByTagName('title');
                 if($element) {
                     $topic = $element->item(0)->nodeValue;
+                   
                 }
-
+                $useLinkAsKey = false;
                 $element = $item->getElementsByTagName('guid');
                 if(count($element) == 1) {
                     $key = $element->item(0)->nodeValue;
+                    if($key == null){
+                        $useLinkAsKey = true;
+                    }
+                }else{
+                    $useLinkAsKey = true;
                 }
 
                 $element = $item->getElementsByTagName('link');
                 if(count($element) == 1) {
                     $link = $element->item(0)->nodeValue;
+                    if($useLinkAsKey){//not all rss is 100% friendly.
+                        $key = $link;
+                    }
                 }
+                unset($useLinkAsKey);
 
                 $element = $item->getElementsByTagName('description');
                 if(count($element) == 1) {
@@ -83,6 +95,9 @@ class RssScraper
                     $posted = strtotime($element->item(0)->nodeValue);
                     $posted = date('Y-m-d H:i:s', $posted);
                     
+                }else{
+                    $posted = date('Y-m-d H:i:s', mktime(0,0,0,0,0,2010));
+                    //just have something.
                 }
 
                 if(isset($topic) && isset($key) && isset($link) && isset($posted) && isset($content)) {
@@ -96,22 +111,27 @@ class RssScraper
                 }
                 else {
                     $this->scrape_failures += 1;
+                    
+                    //if(VERBOSE)
+                    //echo 'We fails! '.isset($topic).'-'.isset($key).'-'.isset($link).'-'.isset($posted).'-'.isset($content).'<br />';
+                    //uncomment the above lines to see how it fails.
                 }
             }
 
             foreach($this->results as $result) {
                 if(VERBOSE)
-                echo "find_post_st(" . $this->source_id . ", " . $this->author_id . ", " . $result->key . ")\n";
-                $this->find_post_for_source_author_st->execute(array($this->source_id, $this->author_id, $result->key));
+                echo "find_post_st(" . $this->source_id . ", " . $this->author_id . ", " . $result->content . ")\n";
+                $this->find_post_for_source_author_st->execute(array($this->source_id, $this->author_id, $result->content,$result->key));
                 $post = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                 if($post == FALSE) {
                     echo "  &nbsp;&nbsp;&nbsp;&nbsp;Creating post. ",$result->topic,"<br />\n";
                     $this->new_posts += 1;
-                    $this->create_post_st->execute(array(
+                    $this->create_post_st->execute(array( 
                         $this->source_id, $this->author_id,
                         $result->key, $result->topic, $result->posted,
-                        $result->link, $result->content
+                        $result->link, $result->content, md5($result->content.$result->topic)
                     ));
+                    
                 }
                 else {
                     if(VERBOSE)

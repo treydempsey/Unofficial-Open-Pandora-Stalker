@@ -557,16 +557,14 @@ class simple_html_dom {
     // load html from file
     function load_file() {
         $args = func_get_args();
-        
+        //echo 'getting '.$args[0].' ';
         $fileinput = call_user_func_array('file_get_contents', $args);
         if(strpos($args[0],'gp32x.com') !== false){//if this is gp32x.com, otherwise we might mess up our document.
-          $fileinput = $this->cleanPage($fileinput);  
+          $fileinput = $this->cleanPage($fileinput);
+          //echo $fileinput;
         }
         $this->load($fileinput, true);
         unset($fileinput);
-    }
-    function removeScripts($input){
-        return preg_replace('/\<script\>(.+?)\<\/script>/imsX', '',$input);//regex remove script tags.
     }
     function removeHugeSpaces($input){
         $input = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "\n", $input);//don't worry, it just removes huge spaces...
@@ -580,41 +578,38 @@ class simple_html_dom {
         $filtered = preg_replace('/(border|onclick|bgcolor|cellspacing|color|cellpadding|width|height|style|background|colspan|rowspan|align|valign|on[a-zA-Z]+)+\=([_a-z=\"\\\'\\\\A-Z\s\.\/\:\#0-9 \d\s\w =\`\'\"\/\:\.\;\%]+?)\>/imsX', '>',$filtered);
         return $filtered;
     }
+    function lastfixes($input){
+        $input = preg_replace('/([a-zA-Z]+)=\"\W([a-z_A-Z0-9#?\.\:\/]+)\W"/i', '\1="\2"',  $input);
+        return $input;
+    }
     function cleanPage($input){
         //might be the longest function here actually... but it does work VERY wel.
-        $input = $this->removeScripts($input);//take out scripts.
         $input = $this->removeHTMLStyling($input);//take out styles and such but retain id, clas, name, etc.
-        $input = $this->removeHugeSpaces($input);//take out big whitespaces.
-        $input = preg_replace('/\<\/*(meta|br|link|style|script|center|img|font|bgsound|embed|applet|strong)[_a-z=\"\\\'\\\\A-Z\s\.\/\:\#0-9 \d\s\w =\`\'\"\/\:\.\;\%\(\)\!]*\>/imsU', ' ',$input);
-        //take out the crap html we don't care about.
-        $input = preg_replace('/\<\/*script[\d\s\w =\`\'\"\/\:\.]*>/imsU', '', $input);
-        //clean out side thing
-        $input = $this->removeHugeSpaces($input);
-        //$input = preg_replace('/\<\/*a[\d\s\w =\`\'\"\/\:\.]*>/imsU', '', $input);
-        $input = strip_tags($input, "<table><tr><td><a><div><span><abbr><p>");
-        //$input = preg_replace('/<\/*a>/ims', '',$input);
-        //cleaned out those useless a tags.
-        //Now to clean out the empty tables...
-        for($x = 0; $x < 40; $x++){
-            $cur = $input;
-            //since there can be empty tables multiple times we need clear them out.
-        $input = preg_replace('/<\s*td(\s*(class|id|name)\="([\d\D]*?)")*\s*>\s*\<\/td>/ims', ' ',$input);
-        $input = preg_replace('/<\s*tr(\s*(class|id|name)\="([\d\D]*?)")*\s*>\s*\<\/tr>/ims', ' ',$input);
-        $input = preg_replace('/<\s*table(\s*(class|id|name)\="([\d\D]*?)")*\s*>\s*\<\/table>/ims', ' ', $input);
-        $input = preg_replace('/\<(td|span)?\>\s*(.*?)\s*<\/(td|span)?>/ims', '<$1>$2</$3>', $input);
-        $input = preg_replace('/<(td|table|a|span|div|tr)?\s+>/ims', '<$1>',$input);
-        $input = preg_replace('/<a>([\d\D]*?)<\/a>/ims', '$1', $input);
-        $input = preg_replace('/<span>([\d\D]*?)<\/span>/ims', '$1', $input);
-        $input = preg_replace('/<(td|div|span|a|tr|table)?\s+(class|id|name)?=([^\"][a-zA-Z0-9%]+[^\"])?\s*>/ims', '<$1 $2="$3">',$input);
-        //oh and while we are at it... we can clean up the HTML. No need for stuff like <span>blah</span> when the span does nothing...
-        $input = $this->removeHugeSpaces($input);
-        if($input == $cur){
-            $x = 80000;
+        //$input = removeHugeSpaces($input);//take out big whitespaces.
+        
+        //Section where these wrape around things
+        $badElements = array( 'style','bgsound','applet',  'script');
+        foreach($badElements as $bad){
+            $input = preg_replace('/<'.$bad.'[^>]*?>(.*?)<\/'.$bad.'>/is', "", $input);/* */
+            
         }
-        //echo $x." ";
+  
+        //section where it is like <element />
+        $badElements = array('link','meta');
+        foreach($badElements as $bad){
+            $input = preg_replace('/<'.$bad.'[^>]*?>/is', "", $input);/* */
         }
+
+        $input = $this->removeHugeSpaces($input);
+
         $input = trim($input);
-        $input = preg_replace('/\n+/ims', '',$input);
+        $input = preg_replace('/\n+/ims', "\n",$input);
+        $input = preg_replace('/<br[ a-zA-Z0-9\"\=\_]+>/i', '<br />',$input);//seriously, why would people style or put classes on a br.. come on..
+        //clean up the weirdos.*/
+            $input = $this->lastfixes($input);
+             $input = preg_replace('/(\s)([a-zA-Z0-9_]*)\=\'([^\']*)\'/isU', '\1\2="\3"',$input);
+             $input = strip_tags($input, '<br><img><a><div><table><td><tr><th><ul><li><div><abbr>');
+        echo '&nbsp;&nbsp;&nbsp;&nbsp;Cleaned Page! '.md5($input).'<br />'."\n";
         return $input;
     }
 

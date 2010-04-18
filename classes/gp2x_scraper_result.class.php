@@ -34,7 +34,9 @@ class Gp2xScraperResult
     protected function scrape_page()
     {
         if(VERBOSE)
-        echo "Enriching from " . $this->link . "\n";
+        echo "Enriching from " . $this->link . "<br />\n";
+        //echo round(memory_get_usage()/1048576,3)."MB used<br />\n";
+        flush2();
         $this->page = new $this->web_page_class(array('url' => $this->link));
         $this->html = $this->page->load_file();
 
@@ -63,6 +65,7 @@ class Gp2xScraperResult
                 unset($this->link);
             }
         }
+        $this->html->clear();
     }
 }
 

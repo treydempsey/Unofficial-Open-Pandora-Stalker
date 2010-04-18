@@ -1,763 +1,271 @@
 <?xml version="1.0"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unofficial OP Stalker</title>
     <link>http://www.open-pandora.org/</link>
+    <atom:link href="http://kloplop321.com/uops/rss.php" rel="self" type="application/rss+xml"/>
     <description>The Unofficial Open Pandora Stalker</description>
     <language>en</language>
     <image>
-      <url>http://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/200px-Feed-icon.svg.png</url>
+      <url>http://pandorawiki.org/skins/common/images/wiki.png</url>
       <title>Unofficial OP Stalker</title>
       <link>http://www.open-pandora.org/</link>
     </image>
     <item>
+      <title>Fullspeed Amiga Emulation On Pandora!</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/44100-fullspeed-amiga-emulation-on-pandora/page__view__findpost__p__838294</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/44100-fullspeed-amiga-emulation-on-pandora/page__view__findpost__p__838294</guid>
+      <pubDate>Sun, 18 Apr 2010 16:38:02 +0000</pubDate>
+      <description><![CDATA[Double clicking is possible, but touch screen for the mouse will ...]]></description>
+    </item>
+    <item>
+      <title>How Did It All Start.....well After The Ideas</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/53015-how-did-it-all-start-well-after-the-ideas/page__view__findpost__p__841402</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/53015-how-did-it-all-start-well-after-the-ideas/page__view__findpost__p__841402</guid>
+      <pubDate>Sun, 18 Apr 2010 16:10:17 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=841307"></a>Cpt <br />A lot of money, hard work and good luck (and bad).<br />I think with something like this you have to believe it will be easy to do to start with in order to get things rolling.<br />If I knew what I know now about this industry back then I&#39;d have never attempted to do it.<br />Luckly I&#39;m one of those people who just never gives up, I&#39;m so stubborn minded, the Pandora was always going to happen no matter what. <br />]]></description>
+    </item>
+    <item>
+      <title>Volcano?</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52989-volcano/page__view__findpost__p__841395</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52989-volcano/page__view__findpost__p__841395</guid>
+      <pubDate>Sun, 18 Apr 2010 15:53:14 +0000</pubDate>
+      <description><![CDATA[Still no movement from UPS, and won&#39;t be any tomorrow either apparently. <br />]]></description>
+    </item>
+    <item>
+      <title>Unnecesary Keyboard</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52933-unnecesary-keyboard/page__view__findpost__p__841391</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52933-unnecesary-keyboard/page__view__findpost__p__841391</guid>
+      <pubDate>Sun, 18 Apr 2010 15:48:00 +0000</pubDate>
+      <description><![CDATA[Yep, just try using Spectrum/Amiga (etc.) emulators on the GP2X. It&#39;s a frustrating experience. So many games require you to do the odd key press here and there. Almost all spectrum games will initially require some kind of key press to set up the controls.<br />And that&#39;s just games, the Pandora is a real portable computer too - imagine not having a keyboard on your PC/Mac. <br />]]></description>
+    </item>
+    <item>
+      <title>International Pandora Launch Party</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/53010-international-pandora-launch-party/page__view__findpost__p__841153</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/53010-international-pandora-launch-party/page__view__findpost__p__841153</guid>
+      <pubDate>Sat, 17 Apr 2010 18:02:22 +0000</pubDate>
+      <description><![CDATA[In the UK it would have to be somewhere in the London area, although the highest concentration of Pandora orders in the UK is around the Bristol area. <br />]]></description>
+    </item>
+    <item>
+      <title>Unnecesary Keyboard</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52933-unnecesary-keyboard/page__view__findpost__p__841145</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52933-unnecesary-keyboard/page__view__findpost__p__841145</guid>
+      <pubDate>Sat, 17 Apr 2010 17:48:47 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=841095"></a><br /><img src="http://upload.wikimedia.org/wikipedia/commons/3/33/ZXSpectrum48k.jpg" alt="Posted Image" class="bbc_img" /><br />]]></description>
+    </item>
+    <item>
+      <title>Fully Assembled Production Samples</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/53005-fully-assembled-production-samples/page__view__findpost__p__841073</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/53005-fully-assembled-production-samples/page__view__findpost__p__841073</guid>
+      <pubDate>Sat, 17 Apr 2010 13:29:14 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=841069"></a><br />Well UPS are shipping nothing until this volcano madness ends, but I hope they can be shipped this coming week. I see flights might start again tomorrow sometime. Maybe. <br />]]></description>
+    </item>
+    <item>
+      <title>Fully Assembled Production Samples</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/53005-fully-assembled-production-samples/page__view__findpost__p__841064</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/53005-fully-assembled-production-samples/page__view__findpost__p__841064</guid>
+      <pubDate>Sat, 17 Apr 2010 12:56:45 +0000</pubDate>
+      <description><![CDATA[It fits together great and actually passes Michaels QC.<br />They did paint the controls on the grey one, but we won&#39;t be going with that, or with painting the controls. <br />]]></description>
+    </item>
+    <item>
+      <title>Fully assembled production samples</title>
+      <dc:creator>Michael Weston - Photobucket</dc:creator>
+      <link>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=black_grey_flash.jpg&amp;sort=ascending</link>
+      <guid>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=black_grey_flash.jpg&amp;sort=ascending</guid>
+      <pubDate>Sat, 17 Apr 2010 05:39:43 +0000</pubDate>
+      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=black_grey_flash.jpg&sort=ascending" title="black_grey_flash.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_black_grey_flash.jpg" alt="black_grey_flash.jpg" /></a><br>Fully assembled production samples - black_grey_flash.jpg</p><p>Flash on camera(plastic cover on LCD face)</p>]]></description>
+    </item>
+    <item>
+      <title>Fully assembled production samples</title>
+      <dc:creator>Michael Weston - Photobucket</dc:creator>
+      <link>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=black_grey_noflash.jpg&amp;sort=ascending</link>
+      <guid>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=black_grey_noflash.jpg&amp;sort=ascending</guid>
+      <pubDate>Sat, 17 Apr 2010 05:39:39 +0000</pubDate>
+      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=black_grey_noflash.jpg&sort=ascending" title="black_grey_noflash.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_black_grey_noflash.jpg" alt="black_grey_noflash.jpg" /></a><br>Fully assembled production samples - black_grey_noflash.jpg</p><p>No camera flash(plastic cover on LCD face)</p>]]></description>
+    </item>
+    <item>
       <title>Painted samples are shown, one unexpected.</title>
-      <author>pandorapress - Unofficial Blog</author>
+      <dc:creator>pandorapress - Unofficial Blog</dc:creator>
       <link>http://pandorapress.net/2010/04/16/painted-sample-cases-have-arrived-one-unexpected/</link>
-      <pubDate>Fri, 16 Apr 2010 22:22:25 GMT</pubDate>
-      <description><![CDATA[Posted by: BackAssward
-
-MWeston has favored us with some new pics of the Sample Cases, assembled.  The pics show the regular unpainted case, one painted black, and surprisingly one painted a dark shade of grey.  Sure it&#8217;s no pink, but you can&#8217;t make everyone happy.
-(Click for larger version, but they are big so be [...]]]></description>
+      <guid>http://pandorapress.net/2010/04/16/painted-sample-cases-have-arrived-one-unexpected/</guid>
+      <pubDate>Fri, 16 Apr 2010 22:22:25 +0000</pubDate>
+      <description><![CDATA[Posted by: BackAsswardMWeston has favored us with some new pics of the Sample Cases, assembled. The pics show the regular unpainted case, one painted black, and surprisingly one painted a dark shade of grey. Sure it&#8217;s no pink, but you can&#8217;t make everyone happy.(Click for larger version, but they are big so be [...]]]></description>
     </item>
     <item>
       <title>Open cases side by side</title>
-      <author>Michael Weston - Photobucket</author>
+      <dc:creator>Michael Weston - Photobucket</dc:creator>
       <link>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=all_cases.jpg&amp;sort=ascending</link>
-      <pubDate>Fri, 16 Apr 2010 21:33:03 GMT</pubDate>
+      <guid>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=all_cases.jpg&amp;sort=ascending</guid>
+      <pubDate>Fri, 16 Apr 2010 21:33:03 +0000</pubDate>
       <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=all_cases.jpg&sort=ascending" title="all_cases.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_all_cases.jpg" alt="all_cases.jpg" /></a><br>Open cases side by side - all_cases.jpg</p><p>Black/grey/unpainted</p>]]></description>
     </item>
     <item>
       <title>Assembled test cases</title>
-      <author>Michael Weston - Photobucket</author>
+      <dc:creator>Michael Weston - Photobucket</dc:creator>
       <link>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=DSC02372.jpg&amp;sort=ascending</link>
-      <pubDate>Fri, 16 Apr 2010 21:14:07 GMT</pubDate>
-      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=DSC02372.jpg&sort=ascending" title="DSC02372.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_DSC02372.jpg" alt="DSC02372.jpg" /></a><br>Assembled test cases - DSC02372.jpg</p><p>Unpainted         Black painted
-            Grey painted</p>]]></description>
-    </item>
-    <item>
-      <title>Assembled test cases</title>
-      <author>Michael Weston - Youtube</author>
-      <link>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=DSC02372.jpg&amp;sort=ascending</link>
-      <pubDate>Fri, 16 Apr 2010 21:14:07 GMT</pubDate>
-      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=DSC02372.jpg&sort=ascending" title="DSC02372.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_DSC02372.jpg" alt="DSC02372.jpg" /></a><br>Assembled test cases - DSC02372.jpg</p><p>Unpainted         Black painted
-            Grey painted</p>]]></description>
+      <guid>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=DSC02372.jpg&amp;sort=ascending</guid>
+      <pubDate>Fri, 16 Apr 2010 21:14:07 +0000</pubDate>
+      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=DSC02372.jpg&sort=ascending" title="DSC02372.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_DSC02372.jpg" alt="DSC02372.jpg" /></a><br>Assembled test cases - DSC02372.jpg</p><p>Unpainted Black painted Grey painted</p>]]></description>
     </item>
     <item>
       <title>New case samples</title>
-      <author>Michael Weston - Photobucket</author>
+      <dc:creator>Michael Weston - Photobucket</dc:creator>
       <link>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=DSC02367.jpg&amp;sort=ascending</link>
-      <pubDate>Fri, 16 Apr 2010 20:24:16 GMT</pubDate>
-      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=DSC02367.jpg&sort=ascending" title="DSC02367.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_DSC02367.jpg" alt="DSC02367.jpg" /></a><br>New case samples - DSC02367.jpg</p><p>Unpainted/Grey/Black
-
-Interesting choices.  Grey is actually like a black/silver looking thing but not at all as nasty as real silver would be.  I like it.  The final color is still black though.
-
-This picture was taken outside in the sunlight.</p>]]></description>
-    </item>
-    <item>
-      <title>New case samples</title>
-      <author>Michael Weston - Youtube</author>
-      <link>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=DSC02367.jpg&amp;sort=ascending</link>
-      <pubDate>Fri, 16 Apr 2010 20:24:16 GMT</pubDate>
-      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=DSC02367.jpg&sort=ascending" title="DSC02367.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_DSC02367.jpg" alt="DSC02367.jpg" /></a><br>New case samples - DSC02367.jpg</p><p>Unpainted/Grey/Black
-
-Interesting choices.  Grey is actually like a black/silver looking thing but not at all as nasty as real silver would be.  I like it.  The final color is still black though.
-
-This picture was taken outside in the sunlight.</p>]]></description>
+      <guid>http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&amp;current=DSC02367.jpg&amp;sort=ascending</guid>
+      <pubDate>Fri, 16 Apr 2010 20:24:16 +0000</pubDate>
+      <description><![CDATA[<p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/">MWeston_2007</a> posted a photo</a></p><p><a href="http://s198.photobucket.com/albums/aa99/MWeston_2007/?action=view&current=DSC02367.jpg&sort=ascending" title="DSC02367.jpg"><img src="http://i198.photobucket.com/albums/aa99/MWeston_2007/th_DSC02367.jpg" alt="DSC02367.jpg" /></a><br>New case samples - DSC02367.jpg</p><p>Unpainted/Grey/BlackInteresting choices. Grey is actually like a black/silver looking thing but not at all as nasty as real silver would be. I like it. The final color is still black though.This picture was taken outside in the sunlight.</p>]]></description>
     </item>
     <item>
       <title>Fellow Pre-Orderers: Reveal Yourselves</title>
-      <author>craigix - GP2X</author>
+      <dc:creator>craigix - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840751</link>
-      <pubDate>Fri, 16 Apr 2010 17:27:01 GMT</pubDate>
-      <description><![CDATA[I found this and think it should win the compo<br /><img src='http://gbax.com/upupontheroof.jpg' alt='Posted Image' class='bbc_img' />
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840751</guid>
+      <pubDate>Fri, 16 Apr 2010 17:27:01 +0000</pubDate>
+      <description><![CDATA[I found this and think it should win the compo<br /><img src="http://gbax.com/upupontheroof.jpg" alt="Posted Image" class="bbc_img" /><br />]]></description>
+    </item>
+    <item>
+      <title>Volcano?</title>
+      <dc:creator>craigix - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52989-volcano/page__view__findpost__p__840742</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52989-volcano/page__view__findpost__p__840742</guid>
+      <pubDate>Fri, 16 Apr 2010 17:11:54 +0000</pubDate>
+      <description><![CDATA[UPS are using this as an excuse for them delivering nothing this week. It has apparently totally stalled all their operations. <br />]]></description>
     </item>
     <item>
       <title>Fellow Pre-Orderers: Reveal Yourselves</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840712</link>
-      <pubDate>Fri, 16 Apr 2010 15:38:43 GMT</pubDate>
-      <description><![CDATA[<hr /><br />What happens if you lose? <br />You never know with drinking games... :D <br /><hr /><br />... and the face of the girl when she just continues to play her RPG and eventually finds that spot :) <br />I wonder if he did it AFTER she started playing or if he created it and let her play the game waiting for her to find that spot aftet 14+ hours of normal gameplay...
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840712</guid>
+      <pubDate>Fri, 16 Apr 2010 15:38:43 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=840682"></a><br />What happens if you lose? <br />You never know with drinking games... :D <br />Quote<br />... and the face of the girl when she just continues to play her RPG and eventually finds that spot :) <br />I wonder if he did it AFTER she started playing or if he created it and let her play the game waiting for her to find that spot aftet 14+ hours of normal gameplay... <br />]]></description>
     </item>
     <item>
       <title>Fellow Pre-Orderers: Reveal Yourselves</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840647</link>
-      <pubDate>Fri, 16 Apr 2010 13:35:04 GMT</pubDate>
-      <description><![CDATA[<hr /><br />You&#39;re a fake.<br />I mean, a woman that loves geek toys AND looks good? Can&#39;t be. We all know that :D <br />BTW: Did you win the dice game? ;) 
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840647</guid>
+      <pubDate>Fri, 16 Apr 2010 13:35:04 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=840612"></a><br />You&#39;re a fake.<br />I mean, a woman that loves geek toys AND looks good? Can&#39;t be. We all know that :D <br />BTW: Did you win the dice game? ;)  <br />]]></description>
     </item>
     <item>
       <title>Sdio, .pnd Files, And The Dsp</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52992-sdio-pnd-files-and-the-dsp/page__view__findpost__p__840642</link>
-      <pubDate>Fri, 16 Apr 2010 13:09:52 GMT</pubDate>
-      <description><![CDATA[All the PNDs I create are compressed :) <br />Exaile is just 1,3MB big :D 
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52992-sdio-pnd-files-and-the-dsp/page__view__findpost__p__840642</guid>
+      <pubDate>Fri, 16 Apr 2010 13:09:52 +0000</pubDate>
+      <description><![CDATA[All the PNDs I create are compressed :) <br />Exaile is just 1,3MB big :D  <br />]]></description>
     </item>
     <item>
       <title>Qt 4.6+ Work On Pandora?</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52993-qt-4-6-work-on-pandora/page__view__findpost__p__840580</link>
-      <pubDate>Fri, 16 Apr 2010 9:56:49 GMT</pubDate>
-      <description><![CDATA[Arora (our webbrowser on the Pandora) runs with QT ;) 
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52993-qt-4-6-work-on-pandora/page__view__findpost__p__840580</guid>
+      <pubDate>Fri, 16 Apr 2010 09:56:49 +0000</pubDate>
+      <description><![CDATA[Arora (our webbrowser on the Pandora) runs with QT ;)  <br />]]></description>
     </item>
     <item>
       <title>Sdio, .pnd Files, And The Dsp</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52992-sdio-pnd-files-and-the-dsp/page__view__findpost__p__840577</link>
-      <pubDate>Fri, 16 Apr 2010 9:49:34 GMT</pubDate>
-      <description><![CDATA[PNDs can be compressed using SquashFS (which is cool, as the file is as big as it would be when you compress it as ZIP).<br />It works fine with games like AlephOne (200MB size&#33;).<br />Haven&#39;t tried if it actually is faster compressed or uncompressed, but I can try during the next days.<br />It doesn&#39;t use the DSP to decompress and I doubt it could really be useful for that.
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52992-sdio-pnd-files-and-the-dsp/page__view__findpost__p__840577</guid>
+      <pubDate>Fri, 16 Apr 2010 09:49:34 +0000</pubDate>
+      <description><![CDATA[PNDs can be compressed using SquashFS (which is cool, as the file is as big as it would be when you compress it as ZIP).<br />It works fine with games like AlephOne (200MB size!).<br />Haven&#39;t tried if it actually is faster compressed or uncompressed, but I can try during the next days.<br />It doesn&#39;t use the DSP to decompress and I doubt it could really be useful for that. <br />]]></description>
     </item>
     <item>
       <title>New Pictarss</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52974-new-pictarss/page__view__findpost__p__840421</link>
-      <pubDate>Thu, 15 Apr 2010 22:43:45 GMT</pubDate>
-      <description><![CDATA[<hr /><br />They probably didn&#39;t install the hinge.
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52974-new-pictarss/page__view__findpost__p__840421</guid>
+      <pubDate>Thu, 15 Apr 2010 22:43:45 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=840413"></a><br />They probably didn&#39;t install the hinge. <br />]]></description>
     </item>
     <item>
       <title>Fellow Pre-Orderers: Reveal Yourselves</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840405</link>
-      <pubDate>Thu, 15 Apr 2010 22:15:23 GMT</pubDate>
-      <description><![CDATA[You asked for it :D <br /><img src='http://www.dragonbox.de/temp/DSCN5470.JPG' alt='Posted Image' class='bbc_img' />
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52981-fellow-pre-orderers-reveal-yourselves/page__view__findpost__p__840405</guid>
+      <pubDate>Thu, 15 Apr 2010 22:15:23 +0000</pubDate>
+      <description><![CDATA[You asked for it :D <br /><img src="http://www.dragonbox.de/temp/DSCN5470.JPG" alt="Posted Image" class="bbc_img" /><br />]]></description>
+    </item>
+    <item>
+      <title>Do Panic!</title>
+      <dc:creator>Michael Weston - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52986-do-panic/page__view__findpost__p__840364</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52986-do-panic/page__view__findpost__p__840364</guid>
+      <pubDate>Thu, 15 Apr 2010 20:54:30 +0000</pubDate>
+      <description><![CDATA[Wouldn&#39;t that just beat all. We finally get our deliveries in order and the earth opens up its crusty orifice and shits all over us! <br />]]></description>
+    </item>
+    <item>
+      <title>New Blog Post!</title>
+      <dc:creator>Michael Weston - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__840281</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__840281</guid>
+      <pubDate>Thu, 15 Apr 2010 17:54:10 +0000</pubDate>
+      <description><![CDATA[The cake is a lie, just like rev6. ;)  <br />]]></description>
     </item>
     <item>
       <title>Selling A Preorder Slot On Ebay</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Michael Weston - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52983-selling-a-preorder-slot-on-ebay/page__view__findpost__p__840278</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52983-selling-a-preorder-slot-on-ebay/page__view__findpost__p__840278</guid>
+      <pubDate>Thu, 15 Apr 2010 17:47:38 +0000</pubDate>
+      <description><![CDATA[Is anyone else just excited that our little device has been on Ebay twice now already? I just find that kinda neat. That is all. ;)  <br />]]></description>
+    </item>
+    <item>
+      <title>New Blog Post!</title>
+      <dc:creator>Michael Weston - GP2X</dc:creator>
+      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__840275</link>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__840275</guid>
+      <pubDate>Thu, 15 Apr 2010 17:41:53 +0000</pubDate>
+      <description><![CDATA[There&#39;s a big box of test cases arriving with me tomorrow afternoon (according to UPS at this very moment, subject to change, all rights reserved, patent pending, copyright 2010, we reserve the right to change at any time, your mileage may vary, items may be larger than they appear). :D <br />I have no idea if the pink one will be in there. It&#39;s a bigger shipment though: 1.40Kgs. Should be several cases and I know there will be painted and painted + silk screened cases in there. <br />]]></description>
+    </item>
+    <item>
+      <title>Selling A Preorder Slot On Ebay</title>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52983-selling-a-preorder-slot-on-ebay/page__view__findpost__p__840274</link>
-      <pubDate>Thu, 15 Apr 2010 17:33:44 GMT</pubDate>
-      <description><![CDATA[<hr /><br />It&#39;s not hard for me since he included his order number at eBay ;) <br />I will change the shipping adress but will eventually demand additional shipping costs (depending on who buys it).<br />I will not change the invoice adress, as that would only happen if I refund and a new one gets it (and there is a waiting list, so it&#39;s kinda unfair to them doing this on eBay).
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52983-selling-a-preorder-slot-on-ebay/page__view__findpost__p__840274</guid>
+      <pubDate>Thu, 15 Apr 2010 17:33:44 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=840269"></a><br />It&#39;s not hard for me since he included his order number at eBay ;) <br />I will change the shipping adress but will eventually demand additional shipping costs (depending on who buys it).<br />I will not change the invoice adress, as that would only happen if I refund and a new one gets it (and there is a waiting list, so it&#39;s kinda unfair to them doing this on eBay). <br />]]></description>
     </item>
     <item>
       <title>Selling A Preorder Slot On Ebay</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52983-selling-a-preorder-slot-on-ebay/page__view__findpost__p__840268</link>
-      <pubDate>Thu, 15 Apr 2010 17:28:55 GMT</pubDate>
-      <description><![CDATA[Well, the seller can change the shipping adress, but all additional costs (i.e. higher shipping costs) need to be covered by him.<br />The invoice adress won&#39;t change, since he is the one who made the contract with the distributor (which is me in that case), so the eBay buyer would receive the Pandora but get an invoice with the adress of the other guy.<br />You can&#39;t sell any contracts. You can sell the device - and if you sell somebody a device, you usually get the invoice he got. For warranty, this is no big deal, but if the new buyer wants to use it for tax returns, etc., he simply can&#39;t.
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52983-selling-a-preorder-slot-on-ebay/page__view__findpost__p__840268</guid>
+      <pubDate>Thu, 15 Apr 2010 17:28:55 +0000</pubDate>
+      <description><![CDATA[Well, the seller can change the shipping adress, but all additional costs (i.e. higher shipping costs) need to be covered by him.<br />The invoice adress won&#39;t change, since he is the one who made the contract with the distributor (which is me in that case), so the eBay buyer would receive the Pandora but get an invoice with the adress of the other guy.<br />You can&#39;t sell any contracts. You can sell the device - and if you sell somebody a device, you usually get the invoice he got. For warranty, this is no big deal, but if the new buyer wants to use it for tax returns, etc., he simply can&#39;t. <br />]]></description>
     </item>
     <item>
       <title>Wiz After Pandora Release</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52982-wiz-after-pandora-release/page__view__findpost__p__840224</link>
-      <pubDate>Thu, 15 Apr 2010 15:47:56 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Yep. In my opinion it&#39;s a nice and cool device on-the-go :) <br />I&#39;m also continuing my support for it, will probably meet up with GPH next month at a gaming expo in Korea and also talk about FunGP (as I might do the english customer support).<br />The Pandora is a very cool device, but if you just want to play games up to SNES or stuff like ScummVM or nice little homebrew games, the WIZ is perfectly fine. Cheaper and smaller.<br />If you want the big thing, go for the Pandora - but it also does cost twice as much.<br />So far, the Pandora has done the WIZ good. A lot of press releases lead people to my website and with the Pandora gaining publicity, WIZ sales went up.
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52982-wiz-after-pandora-release/page__view__findpost__p__840224</guid>
+      <pubDate>Thu, 15 Apr 2010 15:47:56 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=840216"></a><br />Yep. In my opinion it&#39;s a nice and cool device on-the-go :) <br />I&#39;m also continuing my support for it, will probably meet up with GPH next month at a gaming expo in Korea and also talk about FunGP (as I might do the english customer support).<br />The Pandora is a very cool device, but if you just want to play games up to SNES or stuff like ScummVM or nice little homebrew games, the WIZ is perfectly fine. Cheaper and smaller.<br />If you want the big thing, go for the Pandora - but it also does cost twice as much.<br />So far, the Pandora has done the WIZ good. A lot of press releases lead people to my website and with the Pandora gaining publicity, WIZ sales went up. <br />]]></description>
     </item>
     <item>
       <title>Ce Certification Now Invalid?</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840222</link>
-      <pubDate>Thu, 15 Apr 2010 15:44:14 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Don&#39;t blame him, he got valid points. It&#39;s just not that easy to do everything correct from the very beginning. We&#39;re trying to do that - the most important thing is that we need first final units though.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: 50% of the case parts of the Pandora are produced already. :) So of some parts alrea...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12227075932</link>
-      <pubDate>Thu, 15 Apr 2010 14:51:51 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: 50% of the case parts of the Pandora are produced already. :) So of some parts already exists 1000 pcs and the rest is in production. Woot!]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: 50% of the case parts of the Pandora are produced already. :) So of some parts alrea...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12227075932</link>
-      <pubDate>Thu, 15 Apr 2010 14:51:51 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: 50% of the case parts of the Pandora are produced already. :) So of some parts already exists 1000 pcs and the rest is in production. Woot!]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840222</guid>
+      <pubDate>Thu, 15 Apr 2010 15:44:14 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=840215"></a>Creature <br />Don&#39;t blame him, he got valid points. It&#39;s just not that easy to do everything correct from the very beginning. We&#39;re trying to do that - the most important thing is that we need first final units though. <br />]]></description>
     </item>
     <item>
       <title>Ce Certification Now Invalid?</title>
-      <author>Evil Dragon - GP2X</author>
+      <dc:creator>Evil Dragon - GP2X</dc:creator>
       <link>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840205</link>
-      <pubDate>Thu, 15 Apr 2010 14:49:50 GMT</pubDate>
-      <description><![CDATA[<hr /><br />;) We do :P <br />Okay, I just made some phonecalls. I couldn&#39;t get any official authorities who take care that everything conforms the CE on the phone yet, but will probably tomorrow (they&#39;re out of office already).<br />I reached some guys from testing labs though. They know that there was an application to expand the CE frequencies so that WiFi will also need CE. However, they were not sure when this expandation will become valid (it might even be valid). I sent an email to official authorities to send me more information about that.<br />I also talked to a few lawyers: As long as we don&#39;t sell WITHIN US, we&#39;re not responsible for FCC. The one who buys from us and IMPORTS the Pandora is responsible. The buyer makes the contract with us in EU, therefore the laws of EU are valid and no FCC is needed here.<br />Still we want to make the FCC certification so that you all can import it without any hazzles. But as that can only be done with a finished unit, we have to wait 1 - 2 weeks before we can do it.<br />We could also disable the WiFi module for the units we ship to USA and clearly state in the manual that you should not install any software that reenables it.<br />However, that&#39;s not what we want. We want a completely certified and approved Pandora, but that won&#39;t happen before we have some final units. But it&#39;s planned.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>All dressed up and everywhere to go [updated]</title>
-      <author>pandorapress - Unofficial Blog</author>
-      <link>http://pandorapress.net/2010/04/15/all-dressed-up-and-everywhere-to-go/</link>
-      <pubDate>Thu, 15 Apr 2010 13:44:15 GMT</pubDate>
-      <description><![CDATA[Posted by: gruso
-Behold, a painted and assembled Pandora. Click to zoom and enhance, and be warned, they&#8217;re large. As outlined in Tuesday&#8217;s festival of edits, the only verification needed on these painted cases was that they would fit together nicely. The factory has had a set of Pandora internals on hand for some time, so [...]]]></description>
-    </item>
-    <item>
-      <title>Ce Certification Now Invalid?</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840176</link>
-      <pubDate>Thu, 15 Apr 2010 13:39:29 GMT</pubDate>
-      <description><![CDATA[Look, I told the certified (certified by the authorities in Germany&#33;) lab multiple times it has WiFi.<br />And they confirmed me multiple times that CE doesn&#39;t care about WiFi.<br />Nevertheless, the big FCC test is still coming and planned as soon as we get the first mass produced devices (I also mentioned that a few times back then).<br />Unfortunately, for FCC, you have to wait for the first mass produced devices - which we will have in 1 - 2 weeks.<br />That means that the big test which will get us ALL certifications needed will probably ake place while we&#39;re assembling.<br />There are companies like TUEV Nord in Germany that are specialized on testing and getting all the certifications you need to sell it in whatever area you tell them.<br />Those tests do cost a LOT of money (approx. 10-20k EUR), therefore, we planned that testing as soon as we get the first mass produced units.<br />BTW: That resistor didn&#39;t change anything in the WiFi area. The WiFi chip was working well before, it reported a very good signal quality. And transmitting WiFi was ALWAYS working and didn&#39;t have anything to do with the resistor.<br />The only thing the resistor did change was the steepness of the curve for the module to sync the WiFi RECEPTION. The module was receiving everything, but it wasn&#39;t in sync with the board and therefore we had packet loss.<br />The WiFi RX / TX itself hasn&#39;t been changed by that resistor.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Ce Certification Now Invalid?</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840134</link>
-      <pubDate>Thu, 15 Apr 2010 11:34:05 GMT</pubDate>
-      <description><![CDATA[The testing had been done at a certified CE testing lab (see some pictures <a href='http://ec.europa.eu/enterprise/newapproach/nando/index.cfm?fuseaction=directive.nb&amp;refe_cd=EPOS_43408' class='bbc_url' title='External link' rel='nofollow'>here</a>).<br />CE testing includes anything up to 1GHz, no WLAN testing is required for CE, I asked those questions at the laboratory multiple times to really confirm this.<br />I can send you a full 50+ pages PDF document about the complete testing setup and the results if you want.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Ce Certification Now Invalid?</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840127</link>
-      <pubDate>Thu, 15 Apr 2010 11:15:00 GMT</pubDate>
-      <description><![CDATA[<hr /><br />;) I am? :D <br />Well, here is more information:<br /><a href='http://en.wikipedia.org/wiki/CE_mark' class='bbc_url' title='External link' rel='nofollow'>http://en.wikipedia.org/wiki/CE_mark</a><br />It&#39;s called &quot;Self Declaration&quot;<br />&quot;In order to use the CE mark on a product the manufacturer must draw up a Declaration of Conformity (DoC) in which the manufacturer attests conformity with all relevant New Approach Directives (NADs) and takes sole legal responsibility.&quot;
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>New Blog Post&amp;#33;</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__840119</link>
-      <pubDate>Thu, 15 Apr 2010 10:54:24 GMT</pubDate>
-      <description><![CDATA[I&#39;m not &quot;not posting&quot; anymore. Just in threads like these, where everything I say can theoretically be ripped apart.<br />I keep posting at threads where I know the facts.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Ce Certification Now Invalid?</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840113</link>
-      <pubDate>Thu, 15 Apr 2010 10:29:01 GMT</pubDate>
-      <description><![CDATA[One more time: The CE Certification is a done by the company who produces / sells the device: In that case, us.<br />If we certificate it, it&#39;s fine. WE are the ones responsible for assuring it does pass CE. There is NO ONE else who can do a certification for you.<br />If you include a CE certification within your product, you are claiming you tested the device and made sure it is within all of the given CE specs.<br />If it&#39;s not the case and a test or some problems do reveal this, you are responsible for it.<br />The test basically is optional, but it would be madness selling a device telling it conforms the CE without testing it.<br />There is no such thing invalid CE certification.<br />No need to retest it, though, as the only critical thing that didn&#39;t pass EMV was the LCD cable, so it had to be shielded (very common problem with such devices).<br />That resistor doesn&#39;t change anything there, so I can assure you it&#39;s still within the specs.<br />As soon as we got enough money, we will go for a big test that includes ALL testing for everything needed worldwide, but that&#39;s VERY expensive.<br />Until then, we did what he had to do to sell it legally - do CE, as we are sitting in Europe.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Unnecesary Keyboard</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52933-unnecesary-keyboard/page__view__findpost__p__840110</link>
-      <pubDate>Thu, 15 Apr 2010 10:16:46 GMT</pubDate>
-      <description><![CDATA[<hr /><br />That device you&#39;re looking for is called the WIZ.<br />Or maybe you want to get one of these:<br /><object type="application/x-shockwave-flash" height="355" width="425" data="http://www.youtube.com/v/9BnLbv6QYcA"><param name="movie" value="http://www.youtube.com/v/9BnLbv6QYcA"><param name="allowScriptAccess" value="sameDomain"><param name="quality" value="best"><param name="bgcolor" value="#FFFFFF"><param name="scale" value="noScale"><param name="salign" value="TL"><param name="FlashVars" value="playerMode=embedded" /><param name="wmode" value="transparent"/></object>
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Moved our scripts into an internal PND file, so that all GUs (minimenu and pmenu so ...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12199815571</link>
-      <pubDate>Thu, 15 Apr 2010 2:39:12 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Moved our scripts into an internal PND file, so that all GUs (minimenu and pmenu so far) can also make use of them.]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Moved our scripts into an internal PND file, so that all GUs (minimenu and pmenu so ...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12199815571</link>
-      <pubDate>Thu, 15 Apr 2010 2:39:12 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Moved our scripts into an internal PND file, so that all GUs (minimenu and pmenu so far) can also make use of them.]]></description>
-    </item>
-    <item>
-      <title>Ed&amp;#39;s Gamma Movie</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52948-eds-gamma-movie/page__view__findpost__p__839950</link>
-      <pubDate>Thu, 15 Apr 2010 2:21:56 GMT</pubDate>
-      <description><![CDATA[<hr /><br />No need to call a script, the gamma can simply be changed by echoing values to /sys/devices/platform/omap2_mcspi.1/spi1.1/gamma<br />Any app or tool can easily do that.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Video: The LCD Gamma Manager</title>
-      <author>pandorapress - Unofficial Blog</author>
-      <link>http://pandorapress.net/2010/04/14/video-the-lcd-gamma-manager/</link>
-      <pubDate>Wed, 14 Apr 2010 13:13:37 GMT</pubDate>
-      <description><![CDATA[Posted by: gruso
-
-EvilDragon&#8217;s been scriptin&#8217;. In the last few days his Twitter account has announced new scripts for mouse control (hello nubs), user management, and as seen in the above video, LCD gamma settings. (For the unsure among you, these scripts are rolled into the OS and appear to the user as extra options to [...]]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: The chinese company confirmed us the paint is lead free. We're still deciding whethe...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12159327412</link>
-      <pubDate>Wed, 14 Apr 2010 12:03:53 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: The chinese company confirmed us the paint is lead free. We're still deciding whether to paint or not though. But it's good to know :)]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: The chinese company confirmed us the paint is lead free. We're still deciding whethe...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12159327412</link>
-      <pubDate>Wed, 14 Apr 2010 12:03:53 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: The chinese company confirmed us the paint is lead free. We're still deciding whether to paint or not though. But it's good to know :)]]></description>
-    </item>
-    <item>
-      <title>New Blog Post&amp;#33;</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__839698</link>
-      <pubDate>Wed, 14 Apr 2010 11:45:26 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Okay, one more last post for now: I&#39;m not throwing the towel. But the lengthy replies I did make took a lot of time. Time I could use to polish the OS more. And as those posts did also lead to a few misunderstandings, I don&#39;t see any reason to make things even worse.<br />You can be sure I read the boards, react to PMs, continue to moderate and administrate... I simply won&#39;t post for the time being.<br />You won&#39;t get rid of me that easy ;) 
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>New Blog Post&amp;#33;</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__839688</link>
-      <pubDate>Wed, 14 Apr 2010 11:27:41 GMT</pubDate>
-      <description><![CDATA[I don&#39;t want to add much anymore, as everything I do write up seems to be understood by some completely different than it was meant.<br />I never said I don&#39;t appreciate the fact that you all financed the Pandora. I know it wouldn&#39;t be possible without you and I&#39;m really happy that you all are still sticking with us. I really am thankful for that.<br />What I didn&#39;t like about the post was that &quot;unauthorised&quot;.<br />We did make clear that the Pandora has to be paid in advance because the actual costs are used for production and parts - and we surely couldn&#39;t have done it with that money.<br />So that money was not unauthorised - as we didn&#39;t take that money away from anyone, it was the choice of each user to take the risk and pay us - or not.<br />Also, no interest rate does help us. The parts have been delivered and paid in 2008 / 2009, we don&#39;t get a single cent out of interest.<br />Some posts sound to me like we would be some big bad company intentionally delaying the Pandora... and that&#39;s what makes me sad.<br />We&#39;re still just a bunch of humans, trying to do everything we can to deliver it as fast as we can. That&#39;s it.<br />Well, this will be my last post for a while. Maybe until after assembly.<br />A lot of things I do say seem to lead to complete misunderstandings - they seem to be read in a completely different way than what I meant.<br />You can be sure we do know that we couldn&#39;t have pulled off the whole project without you guys. And we&#39;re trying to do the best we can to do so.<br />But getting blamed because we FIX things is something hard to understand for me.<br />Anyways, enjoy. I&#39;ll be back after release. Promise :) 
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>New Blog Post&amp;#33;</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__839574</link>
-      <pubDate>Wed, 14 Apr 2010 2:34:32 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Intentionally crippled and unintentionally crippled it even more due to WiFi issues ;) 
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>New Blog Post&amp;#33;</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__839571</link>
-      <pubDate>Wed, 14 Apr 2010 2:30:40 GMT</pubDate>
-      <description><![CDATA[<hr /><br />It&#39;s definately also perfect for me. Fullspeed Amiga. Nice LCD Gamma control to make games look better. Perfect DPad and button setup.<br />Full featured desktop in case I do not only want to play games... I&#39;ve got my prototype since December and love it.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>New Blog Post&amp;#33;</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52935-new-blog-post/page__view__findpost__p__839562</link>
-      <pubDate>Wed, 14 Apr 2010 1:52:21 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Well, and that&#39;s what you get. Oh, and we NEVER said you have to pay when you get it. It was clear from the VERY BEGINNING that you have to pay in advance.<br />Please never open up any of your devices, you&#39;ll find A LOT of modifications, especially on first release devices. And even if you don&#39;t find some - that doesn&#39;t mean it hasn&#39;t been done, as you cannot see that a resistor has been replaced if it was done properly.<br />The PCB will not bee repaired, the PCB is fine. There is simply one resistor that needs to have another value and that one is being replaced. That&#39;s a common thing to do.<br />The quality of the plastic is fine, it&#39;s sturdy, it doesn&#39;t break, there is no problem. But due to the nature of moulding, some things can be seen through the case.<br />You think painting is covering up? Hell, I did check a few devices I own at home.<br />My mobile phone is painted. My notebook is painted. My Nintendo DS is painted. Even my Logitech mouse does use paint. Just because you don&#39;t know there is no paint doesn&#39;t mean it is not there.<br />Speaking of GPH:<br />The GP2X First Edition did have a wrong resistor. However, those were delivered with the wrong resistor (leading to much too dark colors and flickering LCDs) and I had to change them all afterwards.<br />We could&#39;ve done so with the WiFi resistor, however, we chose to fix it before delivery. Do you think that&#39;s wrong?<br />And by design and technical flaws from GPH products, we were talking about stuff like...<br />* Unusable stick for gaming (GP2X F100)<br />* DPAD not that great either (GP2X F200)<br />* Wrong type of LCD used (240x320 instead of 320x240, leading to tearing or workarounds)<br />That&#39;s something the Pandora certainly doesn&#39;t suffer from.<br />So yeah, you still get exactly the same what we announced you will get when you ordered.<br /><hr /><br />Yeah, Sony Ericsson (Phone) and Thomson (Cable Receiver) seems like a bad choice.<br />While it is sad you cancel, I can&#39;t say anything against it, as you probably aren&#39;t the user the first batch was intended for.<br />The first batch is mainly for fans of homebrew and opensource, geeks and similar folks who don&#39;t care if the software doesn&#39;t run 100% from the beginning.<br />The hardware will be fine, we fixed everything up, so there&#39;s no problem anymore.<br /><hr /><br />It&#39;s not about attitude - in fact, I think our attitude is fine here, as we ARE fixing up everything before we ship.<br />Show me ONE recent device that didn&#39;t have problems with the first release edition... I can&#39;t find many (except for simple devices)<br />iPad? Suffers WiFi problems (just check google)<br />Sony PSP? Also had troubles (terrible LCD, buttons were squeaking, etc.)<br />XBox360? Tons of them suffered the Red Ring of Death.<br />Those are all devices from multi billion dollar companies.<br />They couldn&#39;t do it right - even with A LOT more people working on it and A LOT more money to build such thing.<br />Now here we are. A bunch of guys trying to create the best OpenSource handheld gaming device available. And I think we did well. Even the prototype case is sturdy and fine. The hardware is fast enough to run a full desktop without lagging.<br />The gaming controls work perfectly, way better than on any other handheld I own.<br />You were able to follow our steps, our trials, our problems. We did fix EVERYTHING there was, did try to do our best. In our sparetime. With very little money. If we were multi billion dollar companies, we could&#39;ve produced those cases outside of China. They would&#39;ve been finished long ago and probably would look perfect. I&#39;m really sorry I do not have a few million dollar lying around. I&#39;m sorry we&#39;re just some normal guys trying as hard as we can creating the Pandora. Maybe you did expect some gods. Well, we are no gods. And we never claimed we are.<br />Still, looking at the market, I do think we did extremely well with the Pandora. Whereever I have a presentation with my prototype, it interests a lot of people and they would buy it instantly if I had some with me.<br />We fixed everything BEFORE delivery, I honestly do think that&#39;s not something to be blamed for.<br />If you do think so - well, I can&#39;t help it. I can&#39;t do miracles.<br /><hr /><br />It should go faster and it can probably go faster, yes.<br />A netbook is bigger, it has more power.<br />I talked to some other guys regarding that issue, as similar sized devices also won&#39;t go faster:<br />The reason they do 802.11g is that no other devices are slowed down.<br />A normal router cannot do 802.11b and 802.11g at the same time. So if a device connects with 802.11b, it would slow down ALL traffic for ALL devices, as the router always switches to the connection of the slowest device.<br />Most devices that do have our size won&#39;t go higher than 900KB/s.<br />This can be due to various reasons: One reason would be to save power (as small devices don&#39;t have such big batteries as netbooks) and the other reason is the bus / cpu / RAM, etc.<br />Just because the module can make a througput of maybe 5MB/s doesn&#39;t mean the CPU or bus system can&#39;t process all of it.<br />You can&#39;t compare your netbook to a small ARM CPU. The OMAP is very powerful, yes, but still slower than an ARM is.<br />One thing we know is that the CPU speed affects the WiFi speed on our unit. Increasing the CPU does increase the WiFi speed and vice versa.<br />And in minimal mode, the WiFi speed is even faster, maybe because the CPU doesn&#39;t need to power an X Server.<br />Even the WiFi stick I did use didn&#39;t go higher than 900KB/s - and that one supports 802.11n.<br />So yes, you get what you paid for: 802.11b/g<br />But that doesn&#39;t mean you can always automatically expect full speed with it.<br />Most devices in that form factor can&#39;t provide much more.<br />We can probably reach that 900KB/s by working more on the software - but I doubt we will ever squeeze much more out of it.<br /><hr /><br />You&#39;re trying to compare approx. 300 EUR to about 500.000 USD? Wow.<br />And what unauthorised loan? You paid for the device, we clearly said that the money will be used to actually produce the Pandora and you could always cancel your order.<br />There was nothing unauthorised.<br />There were some people who did cancel their order and they got their money back.<br />Complaining about stuff that has been said from the very beginning is dumb.<br /><hr /><br />Well, every moulding company outside of China did want at least 10x as much money for the job. Yes, we would&#39;ve loved to do that - however, if there is no money, you don&#39;t have that option.<br />We did say that we WON&#39;T DO the main production in China, and yes, in fact, that&#39;s what we did. And we did say that we try to do as little as possible in China - and that&#39;s also what we did.<br />We did source the prices for producing outside and it would&#39;ve meant that one Pandora would&#39;ve cost at least 600 - 700 EUR each.<br />The production itself is still being done in Texas, as the population of the boards is the most critical part.<br />BTW: That the production of the PCBs happens in China is not because we said so. We don&#39;t even know WHO produces the PCBs, as we did place our order for the PCBs and the population with the US company in Texas. They are working together with a Chinese partner company, and they produce the PCBs.  And yes, they have worked as well as the USA company we did the prototyping with. The quality of the PCBs is top-notch. The changed impedance of one trace is something we didn&#39;t specifically tell them it shouldn&#39;t change, so this could&#39;ve happened with any other company, too. And in the end it turned out the impedance doesn&#39;t do much - it was a resistor with a wrong value, and that&#39;s nothing anyone else except for us was responsible.<br /><hr /><br />I never recommended that you do so - I just told you the truth about our device and what I do think about the situation.<br />If you have problems with devices which have some flaws at the beginning, you should NEVER be an early adopter. That&#39;s not specifically for the Pandora, that&#39;s the fact for EVERY device out there.<br />I love to be an early adopter, I can live with flaws or even did fix quite a few myself by opening up and modding some devices. But if you 100% a fully flawless device regarding hardware and software, you should NEVER ever buy ANY new device that&#39;s just been released, be it from Apple, Sony, Microsoft or anyone else.<br /><hr /><br />It does run very well for a mobile device. It&#39;s definately fast enough to be usable by anyone. But why use a bloated sluggish browser if there are FASTER ones?<br />FireFox NEVER was the default or only browser on the system. Midori was there from the very beginning, and we just scrapped FireFox because...<br />1. it&#39;s slower than other, faster browsers and needs more RAM than others<br />2. it needs a lot of space on the NAND, and we want the user to decide what to do with the space<br />3. it can be reinstalled with a single command if one specifically wants it<br />Except for some extensions, I cannot find a single reason why people would want to use FireFox over any other faster working browser on the Pandora.<br />For me, FireFox is too slow on my fast desktop PC (Intel T7500). I use Opera and / or Midori.<br />So, could you please tell a single reason (me now that I explained this to you) why FireFox should stay on the system a default browser?<br />Arora is faster, needs less RAM, does display all websites flawlessly (same rendering engine as FireFox), has an Adblocker, can also do tabbed browsing, has a private mode.<br />The only thing it CAN&#39;T do is use extensions or special scripts. Unless you seriously need them, there&#39;s no need to use FireFox.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Aaaand here is another script for the OS: You can now change the different modes for...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12133245092</link>
-      <pubDate>Wed, 14 Apr 2010 0:24:32 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Aaaand here is another script for the OS: You can now change the different modes for the nub and use them as mouse, for scrolling, etc.]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Aaaand here is another script for the OS: You can now change the different modes for...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12133245092</link>
-      <pubDate>Wed, 14 Apr 2010 0:24:32 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Aaaand here is another script for the OS: You can now change the different modes for the nub and use them as mouse, for scrolling, etc.]]></description>
-    </item>
-    <item>
-      <title>Ed&amp;#39;s Gamma Movie</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52948-eds-gamma-movie/page__view__findpost__p__839474</link>
-      <pubDate>Tue, 13 Apr 2010 21:47:26 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Well, a BASIC GUI for all emulators shouldn&#39;t be so hard, as most of them do support command lines.<br />So showing roms from various directories and runnning them using an emulator is easy. The rest (mapping, etc.) depends on the emulator.<br />Power settings (overclocking / underclocking) can already be done with the included PXML file :) 
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Just some tiny unneccessary info: The package with the LCDs and tons of boards on th...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12104552873</link>
-      <pubDate>Tue, 13 Apr 2010 13:50:18 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Just some tiny unneccessary info: The package with the LCDs and tons of boards on the way from Texas to UK does way about 1 ton!]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Just some tiny unneccessary info: The package with the LCDs and tons of boards on th...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12104552873</link>
-      <pubDate>Tue, 13 Apr 2010 13:50:18 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Just some tiny unneccessary info: The package with the LCDs and tons of boards on the way from Texas to UK does way about 1 ton!]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: I uploaded a YouTube video -- Pandora: The LCD Gamma Manager http://youtu.be/71hehqm...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12100927555</link>
-      <pubDate>Tue, 13 Apr 2010 12:25:49 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: I uploaded a YouTube video -- Pandora: The LCD Gamma Manager http://youtu.be/71hehqmv5_c?a]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: I uploaded a YouTube video -- Pandora: The LCD Gamma Manager http://youtu.be/71hehqm...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12100927555</link>
-      <pubDate>Tue, 13 Apr 2010 12:25:49 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: I uploaded a YouTube video -- Pandora: The LCD Gamma Manager http://youtu.be/71hehqmv5_c?a]]></description>
-    </item>
-    <item>
-      <title>Pandora: The LCD Gamma Manager</title>
-      <author>Evil Dragon - Youtube</author>
-      <link>http://www.youtube.com/watch?v=71hehqmv5_c&amp;feature=youtube_gdata</link>
-      <pubDate>Tue, 13 Apr 2010 11:56:56 GMT</pubDate>
-      <description><![CDATA[<div style="color: #000000;font-family: Arial, Helvetica, sans-serif;     font-size:12px; font-size: 12px; width: 555px;">
-<table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td width="140" valign="top" rowspan="2"><div style="border: 1px solid #999999; margin: 0px 10px 5px 0px;"><a href="http://www.youtube.com/watch?v=71hehqmv5_c&amp;feature=youtube_gdata"><img alt="" src="http://i.ytimg.com/vi/71hehqmv5_c/2.jpg"></a></div></td>
-<td width="256" valign="top"><div style="font-size: 12px; font-weight: bold;"><a style="font-size: 15px; font-weight: bold;                  font-decoration: none;" href="http://www.youtube.com/watch?v=71hehqmv5_c&amp;feature=youtube_gdata">Pandora: The LCD Gamma Manager</a>
-<br></div>
-<div style="font-size: 12px; margin: 3px 0px;"><span>The LCD Gamma Manager lets you create, save and load various gamma settings to enhance the LCD picture depending on the app you want to run (i.e. TV Gamma for emulated games)</span></div></td>
-<td style="font-size: 11px; line-height: 1.4em; padding-left: 20px;             padding-top: 1px;" width="146" valign="top"><div><span style="color: #666666; font-size: 11px;">From:</span>
-<a href="http://www.youtube.com/profile?user=EvilDragon1717">EvilDragon1717</a></div>
-<div><span style="color: #666666; font-size: 11px;">Views:</span>
-2892</div>
-<div style="white-space: nowrap;text-align: left"><img style="border: 0px none; margin: 0px; padding: 0px;                    vertical-align: middle; font-size: 11px;" align="top" alt="" src="http://gdata.youtube.com/static/images/icn_star_full_11x11.gif"> <img style="border: 0px none; margin: 0px; padding: 0px;                    vertical-align: middle; font-size: 11px;" align="top" alt="" src="http://gdata.youtube.com/static/images/icn_star_full_11x11.gif"> <img style="border: 0px none; margin: 0px; padding: 0px;                    vertical-align: middle; font-size: 11px;" align="top" alt="" src="http://gdata.youtube.com/static/images/icn_star_full_11x11.gif"> <img style="border: 0px none; margin: 0px; padding: 0px;                    vertical-align: middle; font-size: 11px;" align="top" alt="" src="http://gdata.youtube.com/static/images/icn_star_full_11x11.gif"> <img style="border: 0px none; margin: 0px; padding: 0px;                    vertical-align: middle; font-size: 11px;" align="top" alt="" src="http://gdata.youtube.com/static/images/icn_star_full_11x11.gif"></div>
-<div style="font-size: 11px;">20
-<span style="color: #666666; font-size: 11px;">ratings</span></div></td></tr>
-<tr><td><span style="color: #666666; font-size: 11px;">Time:</span>
-<span style="color: #000000; font-size: 11px; font-weight: bold;">02:48</span></td>
-<td style="font-size: 11px; padding-left: 20px;"><span style="color: #666666; font-size: 11px;">More in</span>
-<a href="http://www.youtube.com/categories_portal?c=28">Science &amp; Technology</a></td></tr></tbody></table></div>]]></description>
-    </item>
-    <item>
-      <title>Up in the air!</title>
-      <author>Evil Dragon - Dev Blog</author>
-      <link>http://www.open-pandora.org/index.php?option=com_content&amp;view=article&amp;id=173%3Aup-in-the-air&amp;catid=2%3Ablog&amp;Itemid=2&amp;lang=en</link>
-      <pubDate>Tue, 13 Apr 2010 9:50:00 GMT</pubDate>
-      <description><![CDATA[<p>Well, it looks like I have to revise my last blogpost, as Michael did know a lot more that WAS already happening than I did. And a lot of questions arosed which I also want to reply.<br /></p><p>So, here is a nice addition to my last blog entry:</p><p>1. As said, doing the mod in Turkey was just an <b>OPTION</b> to make things faster, it was <b>NOT set</b> yet (never said that). As it looks, the decision has already been made and the boards are already on their way to UK! (Yay!)</p><p>2. Another new thing I didn't know yet is that the <b>board production for the rest of the 4000</b> has already been resumed. Makes sense, as the WiFi issue has been resolved.</p><p>3. The cases <b>are going to be shipped on April 17th</b> to UK if they WON'T be painted<b> or April 20th IF they will be painted.</b> After all, the paint is applied <b>AFTER the production</b>, so we can say either <b>DO IT or DON'T do it</b> - depending on how far things are setup in UK and how well everything does fit in the painted case.</p><p><br /></p><p>I hope that makes things a lot clearer - there were a lot of things I didn't know yet. I did send an email to the team asking for the latest information yesterday, but it seems due to the timzeones it didn't quite make it in time, so I could only post what I knew we were evaluating.</p><p><br /></p><p>Sorry for all the inconvenience... now, let's get back to anticipate the Pandora!<br /></p>]]></description>
-    </item>
-    <item>
-      <title>Official blog: Paint it Black [updated]</title>
-      <author>pandorapress - Unofficial Blog</author>
-      <link>http://pandorapress.net/2010/04/13/official-blog-paint-it-black/</link>
-      <pubDate>Tue, 13 Apr 2010 6:45:24 GMT</pubDate>
-      <description><![CDATA[Posted by: gruso
-Here&#8217;s the post. [update] It seems this blog post contained some suggestions that could be misread as facts. Scroll to the bottom for a lengthy (and somewhat pleasing) elaboration from MWeston. Oh, and let&#8217;s not tear ED apart for imperfect 5.30am blog posts. The man works a month every week.
-Here we go with [...]]]></description>
-    </item>
-    <item>
-      <title>Paint it Black</title>
-      <author>Evil Dragon - Dev Blog</author>
-      <link>http://www.open-pandora.org/index.php?option=com_content&amp;view=article&amp;id=172%3Apaint-it-black&amp;catid=2%3Ablog&amp;Itemid=2&amp;lang=en</link>
-      <pubDate>Tue, 13 Apr 2010 3:21:22 GMT</pubDate>
-      <description><![CDATA[<p>Here we go with the latest updates for the hungry masses!<br />First, 
-my apologies for not updating the site a lot. That WiFi issue really did
- wear me out, I wasn't able to do much during that time. We all were a 
-bit demotivated, but now that WiFi's working, we've recovered and are 
-working fullspeed ahead!<br />Sorry for that, but after all, we're only 
-human beings, too... and after years of constant work on the Pandora and
- our normal jobs... well, things can get a bit hard.<br /><br /></p><p><br /></p><p><b>1.
- The hardware</b></p><p>Michael has finished working on WiFi and 
-did manage to get it working quite well. Stable websurfing at about 500 
-KB/s. He tried webbrowsing, streaming music, etc.<br />This put our minds 
-on ease, we really were quite scared when we found out about WiFi.<br />We
- now got <b>FULLY WORKING HARDWARE</b>, as we got drivers for 
-EVERY component!<br /><br />As can be seen on this picture, there's a lot of
- boxes shipping to UK. Some might go to Turkey, as Fatih got hold of a 
-company who usually does laptop repairs, and they might help to fix the 
-WiFi on the already produced 700 boards to speed things up a bit.</p><p>{phocagallery
- view=category|categoryid=17|imageid=154}</p><p>This whole WiFi issue 
-did throw as back a few weeks - but I hope you all do agree it's better 
-we took the two weeks finding out what the problem was. Otherwise, you 
-would've been gotten Pandoras with broken WiFi... not a good idea, if 
-you ask me.<br />This seemed to happen for a big, well-known company whose
- latest product has serious WiFi issues (and WiFi working much worse 
-than ours...)<br />We rather ship you something working - even if it did 
-delay things by two or three more weeks!<br /></p><p><br /></p><p><b>2.
- The cases</b></p><p>While Michael was working on WiFi, the Chinese
- were working on increasing the case quality.<br />And we really do think 
-it was worth the extra time - especially the final one that has some 
-paint added looks spot-on!<br />Way better than anything we've seen 
-before!</p><p>{phocagallery view=category|categoryid=19|imageid=153}</p><p>Just
- compare that to an older version of the case...</p><p>{phocagallery 
-view=category|categoryid=21|imageid=155}</p><p>Was it worth it? &nbsp;That's 
-up to decide for yourself. We sure do think so.<br /><br />Unfortunately, 
-adding paint did lead to one thing that has to be done: As it makes the 
-case a bit thicker, Michael needs to approve that case and therefore is 
-waiting for a sample.<br />To speed production up, Fatih will visit the 
-company in China if necessary to make sure they won't mess around more 
-but start shipping!<br />They still have a few days to ship, as applying 
-the WiFi fix to the boards will take a while.</p><p>One thing that might
- interest you: You might have seen that they also painted a pink version
- of the Pandora... Michael will most probably put a Rev 4 board in and 
-sell it on eBay soon!<br />Yep, that Prototype will probably be out 
-shortly before we assemble and ship!<br /><br />{phocagallery 
-view=category|categoryid=21|imageid=156}</p><p><b>So if you want to
- own this case, keep your eyes on our blog!</b></p><p>Oh, some 
-might think Painting is cheating... well, not really.<br />A lot of 
-companies actually do it that way - and it doesn't wear off. Remember 
-the old Nintendo DS? Not the DS Lite, but the old silvergrey one? I got 
-one. Never had a carry case, it's really scratched (even the LCD is 
-scratched).<br />But only on one corner it can be seen it's painted - and 
-only because the base plastic color was white.<br />So black with black 
-won't wear off - don't worry. It will simply LOOK better.<br /><br /><br /><b>3.
- The software</b></p><p>I'm currently doing a lot of neat scripts 
-while DJWillis prepare the image for the NAND.<br />Today I did create an 
-LCD Gamma Manager - a small tool where you can create, load and save 
-various LCD Gamma settings. I also created one that looks like an old 
-CRT TV. Really cool - emulation on a handheld has never looked better!<br /><b>To
- check out what's happening on the OS, simply go to 
-http://git.openpandora.org&nbsp;</b></p><p>As Midori was a bit unstable 
-and FireFox eating up RAM, we changed browsers once again. Arora is now 
-included in the OS. Fast, without any rendering issues and it didn't 
-crash yet for me.&nbsp;<br />The OS is getting more and more complete.</p><p><br /></p><p>That's
- it for now - as soon as I know any more information (shipping dates for
- the cases, dates when we all meet in England, etc.), I'll inform you!<br />And
- sorry to my German readers: I'll translate the post tomorrow, it's 5:50
- am now, I want to go to bed... :)</p>]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Created another script: A LCD Gamma-Manager. You can create, save and load gamma pro...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12082060332</link>
-      <pubDate>Tue, 13 Apr 2010 2:51:30 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Created another script: A LCD Gamma-Manager. You can create, save and load gamma profiles. Sonic looks cool with TV CRT simulation settings!]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Created another script: A LCD Gamma-Manager. You can create, save and load gamma pro...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12082060332</link>
-      <pubDate>Tue, 13 Apr 2010 2:51:30 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Created another script: A LCD Gamma-Manager. You can create, save and load gamma profiles. Sonic looks cool with TV CRT simulation settings!]]></description>
-    </item>
-    <item>
-      <title>Is There A Mouse Cursor/pointer Like Thing On The Pandora?</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52929-is-there-a-mouse-cursorpointer-like-thing-on-the-pandora/page__view__findpost__p__838849</link>
-      <pubDate>Tue, 13 Apr 2010 0:42:58 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Yeah, if somebody tells me the userspace commands, I will ;) <br />I&#39;ve been hacking up a bunch of nice helpful scripts for the UI lately ;) 
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Ed&amp;#39;s Upcoming Blog Post</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52928-eds-upcoming-blog-post/page__view__findpost__p__838848</link>
-      <pubDate>Tue, 13 Apr 2010 0:41:30 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Naaah, still too early right now :) <br />But it will come in a few hours ;) <br /><hr /><br />Damn, how did you find out? :o 
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Fullspeed Amiga Emulation On Pandora&amp;#33;</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/44100-fullspeed-amiga-emulation-on-pandora/page__view__findpost__p__838592</link>
-      <pubDate>Mon, 12 Apr 2010 9:19:06 GMT</pubDate>
-      <description><![CDATA[<hr /><br />I find this solution to be unlikely at best.<br />Thousands of games, hundreds of which used the mouse somewhere in them, then you have to work out how each program stored the mouse coords (that won&#39;t be a fun job), then see if the program will actually allow you to poke in a new value/patch without some kind of ancient copy protection kicking in, then work out a way of having the emulator identify which game needs which patch and when it needs the patch (those memory locations may well be used for something else when the mouse isn&#39;t on the screen) ... urgh... it&#39;s getting messy...
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Okay, enough Pandora-Hacking for today (it's 5:30 am here...) Time to write a new bl...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12026669176</link>
-      <pubDate>Mon, 12 Apr 2010 3:27:59 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Okay, enough Pandora-Hacking for today (it's 5:30 am here...) Time to write a new blog post tomorrow and update the status page... 'night!]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Okay, enough Pandora-Hacking for today (it's 5:30 am here...) Time to write a new bl...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12026669176</link>
-      <pubDate>Mon, 12 Apr 2010 3:27:59 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Okay, enough Pandora-Hacking for today (it's 5:30 am here...) Time to write a new blog post tomorrow and update the status page... 'night!]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: And another new script: A small user manager that lets you remove and add new users ...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12025657456</link>
-      <pubDate>Mon, 12 Apr 2010 3:05:49 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: And another new script: A small user manager that lets you remove and add new users to the system.]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: And another new script: A small user manager that lets you remove and add new users ...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12025657456</link>
-      <pubDate>Mon, 12 Apr 2010 3:05:49 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: And another new script: A small user manager that lets you remove and add new users to the system.]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Just created a new startup/shutdown-script that will save and restore the Gamma and ...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12021575205</link>
-      <pubDate>Mon, 12 Apr 2010 1:39:50 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Just created a new startup/shutdown-script that will save and restore the Gamma and Brightness-Settings of the LCD.]]></description>
-    </item>
-    <item>
-      <title>EvilDragon1717: Just created a new startup/shutdown-script that will save and restore the Gamma and ...</title>
-      <author>Evil Dragon - Twitter</author>
-      <link>http://twitter.com/EvilDragon1717/statuses/12021575205</link>
-      <pubDate>Mon, 12 Apr 2010 1:39:50 GMT</pubDate>
-      <description><![CDATA[EvilDragon1717: Just created a new startup/shutdown-script that will save and restore the Gamma and Brightness-Settings of the LCD.]]></description>
-    </item>
-    <item>
-      <title>How About The 720Mhz Omap For The Second Batch?</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52890-how-about-the-720mhz-omap-for-the-second-batch/page__view__findpost__p__838516</link>
-      <pubDate>Mon, 12 Apr 2010 1:12:01 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Being able to buy it does not mean it&#39;s ready. The software needs to be mature too. I think it will take just as long as the OMAP3 has.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>How About The 720Mhz Omap For The Second Batch?</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52890-how-about-the-720mhz-omap-for-the-second-batch/page__view__findpost__p__838304</link>
-      <pubDate>Sun, 11 Apr 2010 16:04:50 GMT</pubDate>
-      <description><![CDATA[You really should not worry. The Pandora2 will almost certainly be an OMAP4 and judging by the OMAP3 time line that&#39;s not going to be ready until at least the end of 2011.<br />So maybe you could see some dev units then and a push in mid 2012 for customers.<br />In other words, it&#39;s 2 months away.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Pretty In Pink&amp;#33;</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52911-pretty-in-pink/page__view__findpost__p__838303</link>
-      <pubDate>Sun, 11 Apr 2010 15:57:47 GMT</pubDate>
-      <description><![CDATA[Michael is going to put the pink one on ebay when he gets it.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Fullspeed Amiga Emulation On Pandora&amp;#33;</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/44100-fullspeed-amiga-emulation-on-pandora/page__view__findpost__p__838294</link>
-      <pubDate>Sun, 11 Apr 2010 15:38:25 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Double clicking is possible, but touch screen for the mouse will never be possible. You will either have to drag the Amiga mouse around or use the nubs.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Fullspeed Amiga Emulation On Pandora&amp;#33;</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/44100-fullspeed-amiga-emulation-on-pandora/page__view__findpost__p__838288</link>
-      <pubDate>Sun, 11 Apr 2010 15:06:01 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Yep, that&#39;s something that needs to be coded, as the Amiga doesn&#39;t know what a touchscreen is, it only has a mouse and a mouse can&#39;t jump around.<br /><hr /><br />Now I do wonder... why shouldn&#39;t it?
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Case Finish?</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52906-case-finish/page__view__findpost__p__838286</link>
-      <pubDate>Sun, 11 Apr 2010 14:45:58 GMT</pubDate>
-      <description><![CDATA[<hr /><br />I also can&#39;t remember Nintendo telling me they will sell me a painted case with the Nintendo DS - and in fact, the old Nintendo DS IS painted.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>New Picture</title>
-      <author>mfk - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52894-new-picture/page__view__findpost__p__838216</link>
-      <pubDate>Sun, 11 Apr 2010 9:59:31 GMT</pubDate>
-      <description><![CDATA[Hehehhe.. I like this one.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Pandora Wi-Fi On 350kilobytes/s</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52838-pandora-wi-fi-on-350kilobytess/page__view__findpost__p__838051</link>
-      <pubDate>Sat, 10 Apr 2010 21:29:56 GMT</pubDate>
-      <description><![CDATA[<hr /><br />2.4k? Wishful thinking, you mean (approx) 0.3k.<br />I thought I was the &#39;man&#39; when, for my 13th birthday I got a 28.8k modem, imported from the USA. Shame no other bloody person in the UK had one and I had to use it at 14.4k for about a year&#33;
-						
-						<br /><p class='edit'>
-								This post has been edited by <b>craigix</b>: 10 April 2010 - 09:31 PM
-								
-							</p>]]></description>
-    </item>
-    <item>
-      <title>New Picture</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52894-new-picture/page__view__findpost__p__838049</link>
-      <pubDate>Sat, 10 Apr 2010 21:25:53 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Well, I used such paint for my white GP32 NLU years ago and was playing daily... didn&#39;t wear off yet :) 
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Packed on palettes, pretty in&acirc;&brvbar; pink?!</title>
-      <author>pandorapress - Unofficial Blog</author>
-      <link>http://pandorapress.net/2010/04/10/packed-on-palettes-pretty-in-pink/</link>
-      <pubDate>Sat, 10 Apr 2010 14:38:31 GMT</pubDate>
-      <description><![CDATA[Posted by: BackAssward / gruso
-Bums have been on the edge of seats today as we awaited news from the PCB and case factories, both of which had agreed to ship their stuff by the weekend. And while you may wish to keep one buttock on the threshold of your pew, some scraps of photographic reassurance [...]]]></description>
-    </item>
-    <item>
-      <title>New Picture</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52894-new-picture/page__view__findpost__p__837959</link>
-      <pubDate>Sat, 10 Apr 2010 14:16:04 GMT</pubDate>
-      <description><![CDATA[<hr /><br />We won&#39;t be doing anything but black for now, changing the paint colour means changing the plastic colour under it (chipping would be an issue if we didn&#39;t).<br />But you can see in those photos how smooth the top part is, those marks on the non-painted version make it look as if it isn&#39;t.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Craigix: @Ackieee if we ever did another colour they would, but for now it's just black on black.</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/Craigix/statuses/11938164595</link>
-      <pubDate>Sat, 10 Apr 2010 14:05:19 GMT</pubDate>
-      <description><![CDATA[Craigix: @Ackieee if we ever did another colour they would, but for now it's just black on black.]]></description>
-    </item>
-    <item>
-      <title>Craigix: The plastics factory did a paint finish on some cases for us, see what you think: http://bi...</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/Craigix/statuses/11936741249</link>
-      <pubDate>Sat, 10 Apr 2010 13:29:58 GMT</pubDate>
-      <description><![CDATA[Craigix: The plastics factory did a paint finish on some cases for us, see what you think: http://bit.ly/dy30iZ]]></description>
-    </item>
-    <item>
-      <title>New Picture</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52894-new-picture/page__view__findpost__p__837806</link>
-      <pubDate>Sat, 10 Apr 2010 1:16:27 GMT</pubDate>
-      <description><![CDATA[It&#39;s all the parts apart from the cases.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>How About The 720Mhz Omap For The Second Batch?</title>
-      <author>craigix - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52890-how-about-the-720mhz-omap-for-the-second-batch/page__view__findpost__p__837805</link>
-      <pubDate>Sat, 10 Apr 2010 1:15:54 GMT</pubDate>
-      <description><![CDATA[We are not buying the 720 chip because it&#39;s significantly more expensive than the 600 - plus we think that the 600 will clock to 720 anyway.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Craigix: http://twitpic.com/1ee7h3 - :)</title>
-      <author>craigix - Twitter</author>
-      <link>http://twitter.com/Craigix/statuses/11907180395</link>
-      <pubDate>Fri, 09 Apr 2010 23:26:47 GMT</pubDate>
-      <description><![CDATA[Craigix: http://twitpic.com/1ee7h3 - :)]]></description>
-    </item>
-    <item>
-      <title>How About The 720Mhz Omap For The Second Batch?</title>
-      <author>Michael Weston - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52890-how-about-the-720mhz-omap-for-the-second-batch/page__view__findpost__p__837751</link>
-      <pubDate>Fri, 09 Apr 2010 22:37:14 GMT</pubDate>
-      <description><![CDATA[My answer from TI on this about the 600/720 chips was:<br /><hr /><br />So as I think myself or someone has mentioned in the past, overclocking a 720 (or even just running at 720) will run cooler than a chip sold as a 600 at the same speed.  The speculation begins as to whether it means everyone can overclock the same as long as you stay in an temperature controlled environment like an office or house where 25C is attainable.  Further speculation based on the Motorola Droid, Palm Pre and Nokia N900 overclock tests suggests that the silicon can gate the data at overclocked speeds but these devices run considerably warmer when pushed so it is unknown if the extra heat will eventually mean their death.  <br />If they have 600MHz chips inside, then it is likely they are running hotter than if they are sold with 720 chips.  I don&#39;t know how much hotter the difference is.  It could be as insignificant as 1 degree celcius or it could be 20 degrees (that sounds a bit extreme&#33;).  There&#39;s probably more breathing room in the Pandora case than these phones so that might also benefit overclocking.  Also, since the POP stack on the Pandora PCB is on the bottom side, during normal usage (not setting the unit upside down on your table) all 515 balls will pass the heat of the CPU up to the PCB and dissipate through the copper planes instead of getting trapped in the RAM chip and having to pass through it to the air.  I have no data to suggest this will provide any significant benefit but it seems better than overheating the RAM chip&#33;
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Random Memorabilia With Order?</title>
-      <author>Michael Weston - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52864-random-memorabilia-with-order/page__view__findpost__p__837468</link>
-      <pubDate>Fri, 09 Apr 2010 1:16:11 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Now the battery compartment sticker says it.
-						
-						<br />]]></description>
-    </item>
-    <item>
-      <title>Pandora Wi-Fi On 350kilobytes/s</title>
-      <author>Evil Dragon - GP2X</author>
-      <link>http://www.gp32x.com/board/index.php?/topic/52838-pandora-wi-fi-on-350kilobytess/page__view__findpost__p__837275</link>
-      <pubDate>Thu, 08 Apr 2010 14:15:09 GMT</pubDate>
-      <description><![CDATA[<hr /><br />Haha, don&#39;t worry. It works on Angström on the BeagleBoard but needs a more recent kernel.<br />And the hardware accelleration is within the OMAP, there is no resistor that could be wrong ;) 
-						
-						<br />]]></description>
+      <guid>http://www.gp32x.com/board/index.php?/topic/52970-ce-certification-now-invalid/page__view__findpost__p__840205</guid>
+      <pubDate>Thu, 15 Apr 2010 14:49:50 +0000</pubDate>
+      <description><![CDATA[<a class="snapback" rel="citation" href="http://www.gp32x.com/board/index.php?app=forums&module=forums&section=findpost&pid=840183"></a><br />;) We do :P <br />Okay, I just made some phonecalls. I couldn&#39;t get any official authorities who take care that everything conforms the CE on the phone yet, but will probably tomorrow (they&#39;re out of office already).<br />I reached some guys from testing labs though. They know that there was an application to expand the CE frequencies so that WiFi will also need CE. However, they were not sure when this expandation will become valid (it might even be valid). I sent an email to official authorities to send me more information about that.<br />I also talked to a few lawyers: As long as we don&#39;t sell WITHIN US, we&#39;re not responsible for FCC. The one who buys from us and IMPORTS the Pandora is responsible. The buyer makes the contract with us in EU, therefore the laws of EU are valid and no FCC is needed here.<br />Still we want to make the FCC certification so that you all can import it without any hazzles. But as that can only be done with a finished unit, we have to wait 1 - 2 weeks before we can do it.<br />We could also disable the WiFi module for the units we ship to USA and clearly state in the manual that you should not install any software that reenables it.<br />However, that&#39;s not what we want. We want a completely certified and approved Pandora, but that won&#39;t happen before we have some final units. But it&#39;s planned. <br />]]></description>
     </item>
   </channel>
 </rss>

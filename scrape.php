@@ -1,6 +1,5 @@
 <?php
-//want verbose? uncomment the line below, and comment the line after that.
-//VERBOSE = true;
+//want verbose? change to true
 define("VERBOSE", false);
 ini_set("precision", 12);
 //Set up included extended classes
@@ -14,6 +13,7 @@ require_once('pandora_press_scraper.class.php');
 require_once('twitter_scraper.class.php');
 require_once('youtube_scraper.class.php');
 require_once('MWphotobucket_scraper.class.php');
+require_once('filearchive_scraper.class.php');
 //end including
 }
 function flush2(){
@@ -27,7 +27,9 @@ function flush2(){
     @ob_start();
 }
 
-$db = new PDO('sqlite:db.sqlite3');
+$db = new PDO('mysql:host=localhost;dbname=pandora',
+    'pandora',
+    'pandora1sAw3some' );
 $new_posts = 0;
 $scrape_failures = 0;
 
@@ -35,13 +37,14 @@ $sources_st = $db->prepare(StalkerSqlQueries::$find_sources_sql);
 
 $sources_st->execute();
 $sources = $sources_st->fetchAll(PDO::FETCH_ASSOC);
-/*
+
 if(count($sources) > 0) {
     foreach($sources as $source) {
         echo 'Scraping source ' . $source['source'] . "<br />\n";
         flush2();
 
         
+            
             $scraper_class_name = $source['scraper'];
             $scraper = new $scraper_class_name(array('db' => $db, 'source_id' => $source['source_id']));
             $scraper->scrape();
@@ -53,11 +56,11 @@ if(count($sources) > 0) {
         //echo round(memory_get_usage()/1048576,3)."MB used<br />\n";
         flush2();
         unset($scraper);
-
+        
 
     }
 }
-*/
+
 
 
 echo "\n";

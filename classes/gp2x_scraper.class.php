@@ -44,9 +44,9 @@ class Gp2xScraper
                 $author_key = $this->find_property_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                 if($author_key) {
                     $this->current_url = $this->search_base . $author_key['value'];
-                    if(VERBOSE)
-                    echo "Scraping " . $this->current_url . "\n";
-                    
+                    //if(VERBOSE)
+                    echo "&nbsp;&nbsp;Scraping " . $author_key['value'] . "<br />\n";
+                    flush2();
                     $page = new $this->web_page_class(array('url' => $this->current_url));
                     $html = $page->load_file();
 
@@ -69,6 +69,12 @@ class Gp2xScraper
                                     $key = $m[1];
                                 }
                             }
+                            
+                            $exerpt = (string)$element[0]->innertext;
+                            $exerpt = preg_replace('/<div\s*><a href=\"http:\/\/www\.gp32x[^>]+><img[^>]+><\/a><\/div>/i', '', $exerpt);
+                            $exerpt = preg_replace('/(\'\s)+/i', '\'', $exerpt);
+                            $exerpt = preg_replace('/(&#39;)+/i', '&#39;', $exerpt);
+                            
                         }
 
                         if(isset($topic) && isset($key) && isset($link)) {
@@ -78,6 +84,8 @@ class Gp2xScraper
                                 'key' => $key,
                                 'link' => $link
                             )));
+                        }else{
+                            echo 'Fail _'.isset($topic).'_'.isset($key).'_'.isset($link)."<br />\n";
                         }
                     }
                     $html->clear();
@@ -85,32 +93,43 @@ class Gp2xScraper
 
                 # Lookup each search result in the db, enrich and save if it doesn't exist
                 foreach($this->results as $result) {
+                    //echo $result->key."<br /> \n";
+                    
                     if(VERBOSE)
                     echo "find_post_st(" . $author['source_id'] . ", " . $result->key . ")\n";
-                    $this->find_post_for_source_author_st->execute(array($author['source_id'], $author['author_id'], $result->key));
+                    $this->find_post_for_source_author_st->execute(array($author['source_id'], $author['author_id'],'', $result->key));
                     $post = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                     if($post == FALSE) {
                         # Fetch more data about the post
                         if($result->enrich()) {
-                            if(VERBOSE)
-                            echo "Creating post\n";
+                            //if(VERBOSE)
+                            echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creating post ".md5($result->topic.$result->content). "!<br />\n";
                             $this->new_posts += 1;
                             $this->create_post_st->execute(array(
                                 $author['source_id'], $author['author_id'],
                                 $result->key, $result->topic, $result->posted,
-                                $result->link, $result->content
+                                $result->link, $result->content, md5($result->content.$result->topic)
                             ));
+                            /*echo "_";
+                            print_r($this->create_post_st->errorCode());*/
                         }
                         else {
                           $this->scrape_failures += 1;
-                          echo "ERROR: Could not fetch post\n";
+                          echo "ERROR: Could not fetch post, reverting to exerpt on find all posts page. <br />\n";
                           echo "\t" . $result->link . "\n";
+                          
+                            $this->create_post_st->execute(array(
+                                $author['source_id'], $author['author_id'],
+                                $result->key, $topic, date("Y-m-d H:i:sP"),//be like the IPB time stamp
+                                $link, $exerpt, md5($exerpt.$result->topic)
+                            ));
                         }
                     }
                     else {
                         if(VERBOSE)
                         echo "Post exists.\n";
                     }
+                    
                 }
                 
             }
