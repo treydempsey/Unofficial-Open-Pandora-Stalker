@@ -14,6 +14,7 @@ require_once('twitter_scraper.class.php');
 require_once('youtube_scraper.class.php');
 require_once('MWphotobucket_scraper.class.php');
 require_once('filearchive_scraper.class.php');
+require_once('german_forum_scraper.class.php');
 //end including
 }
 function flush2(){
