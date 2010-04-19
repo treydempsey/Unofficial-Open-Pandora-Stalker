@@ -17,16 +17,15 @@ class GermanForums {
     }
     public function scrape(){
         $this->find_authors_for_source_st->execute(array($this->source_id));
-        $authors = $this->find_authors_for_source_st->fetchAll(PDO::FETCH_ASSOC);
-        if($authors) {
-            foreach($authors as $author) {
+        
+        
                 //there is no use in using $author in the forum as the google url screws it up, so for now we will only have ED scraped.
                 $content = file_get_contents($this->webpage);
                 $content = explode('These Browse Results:',$content);
                 $content = $content[1];
                 $content = explode('<span class="gensmall"',$content);
                 $content = $content[0];
-                $content = cleanPage($content);
+                $content = $this->cleanPage($content);
                 $posts = explode("<tr",$content);
                 $posts2 = array();
                 foreach($posts as $post){
@@ -47,7 +46,7 @@ class GermanForums {
                $posts2 = str_replace(array('</div><div >','</tr></tbody></table></td></tr>
 <td >','</tr></tbody></table>'),'',$posts2);
                $posts2 = preg_replace('/<\/a>\s*([ \w:]*<a href=\"[^"]+\">[^<]+<\/a>([ \w:]*))+[\s]+(<\/p><\/td><\/tr>)*/is', '</a>', $posts2);
-               $posts2 = removeHugeSpaces($posts2);
+               $posts2 = $this->removeHugeSpaces($posts2);
                $posts2 = preg_replace('/<a href=\"(http:\/\/translate.google[^"]+)">/is', '\1</a>', $posts2);
                $posts2 = explode('<b>Post subject:</b>',$posts2);
                
@@ -119,22 +118,23 @@ class GermanForums {
                //now we have all the posts in our $posts variable
                foreach($posts as $post){
                     //now lets check if our post exists.
-                    $this->find_post_for_source_author_st->execute(array($author['source_id'], $author['author_id'],$post['content'], $post['key'], $post['key']));
-                    $post = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
-                    if($post == FALSE) {
+                    $this->find_post_for_source_author_st->execute(array(8, 2,$post['content'], $post['key'], $post['key']));
+                    $post2 = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
+                    if($post2 == FALSE) {
+                        echo "Creating Post: ".$post['title'].'<br />'."\n";
                         $this->new_posts += 1;
-                            $this->create_post_st->execute(array(
-                                $author['source_id'], $author['author_id'],
+                            $this->create_post_st->execute(array(//is it all right to hard-code this in if we know it should be X,X in the DB?
+                                8, 2,
                                 $post['key'], $post['title'], date('Y-m-d H:i:s', strtotime($post['date'])),
-                                $post['link'], $post['content'], md5($post['content'].$post['key'])
+                                $post['link'], $post['content'], md5($post['content'].$post['title'])
                             ));
+                            //echo 'ERROR: '.$this->create_post_st->errorCode().';<br />';
                     }else{
                         //the post exists, since we are going through a forum and all after this logically should already exist in the DB, we should just not bother.
                         break;
                     }
                }
-            }
-        }
+          
     }
     function removeHugeSpaces($input){
         $input = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "\n", $input);//don't worry, it just removes huge spaces...
