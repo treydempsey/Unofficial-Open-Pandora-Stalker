@@ -87,6 +87,12 @@ class GermanForums {
                     //we should look for the date, which usually in all cases is on the second element, but to be sure, lets use the 'posted' value detection
                     $postedPosition = array_search("Posted:",$post);
                     $post2['date'] = $post[$postedPosition+1];//we know the date will be immediately after posted.
+                    //fix the forum time into a standard we know
+                    $post2['date'] = preg_replace('/[A-Za-z]{3} ([a-zA-Z]{1,20}) (\d{1,2}), (\d{2,4}) (\d{2}):(\d{2})/i', '\3-\1-\2 \4:\5:00',$post2['date']);
+                    $months = array('January','February','March','April','May','June','July','August','September','October','November','December');
+                    $months2 = array('01','02','03','04','05','06','07','08','09',10,11,12);
+                    $post2['date'] =str_replace($months,$months2, $post2['date']);
+                    
                     //next we know the message follows the posted position. but before the p\d+ key.
                     //lets use our position we kept earlier for that.
                     $temp = '';
@@ -118,16 +124,17 @@ class GermanForums {
                //now we have all the posts in our $posts variable
                foreach($posts as $post){
                     //now lets check if our post exists.
-                    $this->find_post_for_source_author_st->execute(array(8, 2,$post['content'], $post['key'], $post['key']));
+                    $this->find_post_for_source_author_st->execute(array(8, 2,'Translation: '.$post['content'], $post['key'], $post['key']));
                     $post2 = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                     if($post2 == FALSE) {
                         echo "Creating Post: ".$post['title'].'<br />'."\n";
                         $this->new_posts += 1;
                             $this->create_post_st->execute(array(//is it all right to hard-code this in if we know it should be X,X in the DB?
                                 8, 2,
-                                $post['key'], $post['title'], date('Y-m-d H:i:s', strtotime($post['date'])),
-                                $post['link'], $post['content'], md5($post['content'].$post['title'])
+                                $post['key'], $post['title'], $post['date'],
+                                $post['link'], 'Translation: '.$post['content'], md5('Translation: '.$post['content'].$post['title'])
                             ));
+                            //echo $post['date']."<br />\n";
                             //echo 'ERROR: '.$this->create_post_st->errorCode().';<br />';
                     }else{
                         //the post exists, since we are going through a forum and all after this logically should already exist in the DB, we should just not bother.
