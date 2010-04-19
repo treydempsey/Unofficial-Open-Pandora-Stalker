@@ -40,6 +40,9 @@ $sources = $sources_st->fetchAll(PDO::FETCH_ASSOC);
 
 if(count($sources) > 0) {
     foreach($sources as $source) {
+        //if($source['source'] == 'Twitter'){
+            
+        
         echo 'Scraping source ' . $source['source'] . "<br />\n";
         flush2();
 
@@ -56,7 +59,7 @@ if(count($sources) > 0) {
         //echo round(memory_get_usage()/1048576,3)."MB used<br />\n";
         flush2();
         unset($scraper);
-        
+       // }
 
     }
 }

@@ -97,7 +97,7 @@ class Gp2xScraper
                     
                     if(VERBOSE)
                     echo "find_post_st(" . $author['source_id'] . ", " . $result->key . ")\n";
-                    $this->find_post_for_source_author_st->execute(array($author['source_id'], $author['author_id'],'', $result->key));
+                    $this->find_post_for_source_author_st->execute(array($author['source_id'], $author['author_id'],$result->content, $result->key, $result->key));
                     $post = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                     if($post == FALSE) {
                         # Fetch more data about the post

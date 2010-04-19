@@ -120,8 +120,9 @@ class RssScraper
 
             foreach($this->results as $result) {
                 if(VERBOSE)
-                echo "find_post_st(" . $this->source_id . ", " . $this->author_id . ", " . $result->content . ")\n";
-                $this->find_post_for_source_author_st->execute(array($this->source_id, $this->author_id, $result->content,$result->key));
+                echo "find_post_st(" . $this->source_id . ", " . $this->author_id . ", " . $result->content . ", ".$result->key.")<br />\n";
+                $this->find_post_for_source_author_st->execute(array($this->source_id, $this->author_id, $result->content,$result->key,$result->key));
+                
                 $post = $this->find_post_for_source_author_st->fetch(PDO::FETCH_ASSOC);
                 if($post == FALSE) {
                     echo "  &nbsp;&nbsp;&nbsp;&nbsp;Creating post. ",$result->topic,"<br />\n";
@@ -135,7 +136,7 @@ class RssScraper
                 }
                 else {
                     if(VERBOSE)
-                    echo "Post exists.\n";
+                    echo "Post exists.<br />\n";
                 }
             }
         }

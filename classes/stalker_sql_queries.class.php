@@ -40,7 +40,7 @@ class StalkerSqlQueries
         SELECT `source_id`, `author_id`, `topic`, `posted`,`link`, `content`
         FROM `posts`
         INNER JOIN `sources` ON `posts`.`source_id` = ?
-        WHERE `author_id` = ? AND (`content` = ? OR `key` = ?)
+        WHERE `author_id` = ? AND (`content` = ? OR (`key` = ? OR ( `key` = "0" AND `link` = ?)) )
     ';
 
     public static $create_post_sql = '
