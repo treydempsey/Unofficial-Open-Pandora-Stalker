@@ -80,20 +80,19 @@ class StalkerRss
                             $tlink = $post['link'];
                             if(!in_array($tlink,$this->hkeys)){
                                 $this->hkeys[] = $tlink;
-                            }else{
-                                $tlink .= '#'.base64_encode(mt_rand(0,9999999899));
+                                $this->add_item_to_channel(
+                                    $channel,
+                                    $post['topic'],
+                                    $tlink,
+                                    $post['content'],
+                                    date(DATE_RSS, strtotime($post['posted'])),
+                                         
+                                         $post['source'],
+                                         $post['author']
+                                         
+                                );
                             }
-                            $this->add_item_to_channel(
-                                $channel,
-                                $post['topic'],
-                                $tlink,
-                                $post['content'],
-                                date(DATE_RSS, strtotime($post['posted'])),
-                                     
-                                     $post['source'],
-                                     $post['author']
-                                     
-                            );
+
                             unset($tlink);
                         }
                         //print_r($post);
