@@ -4,8 +4,12 @@ class GermanForums {
     public $new_posts = 0;
     public function __construct($args = array())
     {
+        $rand = rand(0,5);
+        if($rand == 3){
         $this->webpage = 'http://66.196.80.202/babelfish/translate_url_content?.intl=us&lp=de_en&trurl=http%3A%2F%2Fforum.gp2x.de%2Fsearch.php%3Fauthor_id%3D2%26sr%3Dposts';
-
+        }else{
+            $this->webpage = '';//lets just randomly check, so we don't get banned.
+        }
         foreach($args as $arg => $value) {
             $this->$arg = $value;
         }
@@ -20,7 +24,12 @@ class GermanForums {
         
         echo 'is scraping';
                 //there is no use in using $author in the forum as the google url screws it up, so for now we will only have ED scraped.
-                $content = file_get_contents($this->webpage);
+                if($this->webpage != ''){
+                    $content = file_get_contents($this->webpage);
+                }else{
+                    $content = '';
+                }
+                
                 //echo $content;
                 //echo "____";
                 $content = explode('These results scan:',$content);
