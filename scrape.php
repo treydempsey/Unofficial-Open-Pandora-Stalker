@@ -70,6 +70,8 @@ if(count($sources) > 0) {
        // }
 
     }
+}else{
+    echo "NO SOURCES";
 }
 
 
@@ -85,13 +87,7 @@ if($new_posts > -1) {
     $rss = new StalkerRss($db);
     $rss->generate();
     echo 'Writing to feed.rss'."\n";
-    $xml = $rss->xml();
-    $xml2 = file_get_contents("feed.rss");
-    if($xml != $xml2){
-        file_put_contents("feed.rss",$xml);
-    }
-    unset($xml,$xml2);
-    
+    file_put_contents("feed.rss",$rss->xml());
     /*//commented below are crappy stream functions.
     $feed_rss = fopen('feed.rss', 'w');
     fwrite($feed_rss, $rss->xml());

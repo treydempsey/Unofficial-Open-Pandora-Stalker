@@ -4,7 +4,7 @@ class GermanForums {
     public $new_posts = 0;
     public function __construct($args = array())
     {
-        $this->webpage = 'http://translate.googleusercontent.com/translate_c?hl=en&ie=UTF-8&sl=auto&tl=en&u=http://forum.gp2x.de/search.php%3Fauthor_id%3D2%26sr%3Dposts&prev=_t&rurl=translate.google.com&twu=1&usg=ALkJrhifIdIK5DIuN2HFl_4a8j-3-C6spg';
+        $this->webpage = 'http://66.196.80.202/babelfish/translate_url_content?.intl=us&lp=de_en&trurl=http%3A%2F%2Fforum.gp2x.de%2Fsearch.php%3Fauthor_id%3D2%26sr%3Dposts';
 
         foreach($args as $arg => $value) {
             $this->$arg = $value;
@@ -18,10 +18,12 @@ class GermanForums {
     public function scrape(){
         $this->find_authors_for_source_st->execute(array($this->source_id));
         
-        
+        echo 'is scraping';
                 //there is no use in using $author in the forum as the google url screws it up, so for now we will only have ED scraped.
                 $content = file_get_contents($this->webpage);
-                $content = explode('These Browse Results:',$content);
+                //echo $content;
+                //echo "____";
+                $content = explode('These results scan:',$content);
                 $content = $content[1];
                 $content = explode('<span class="gensmall"',$content);
                 $content = $content[0];
@@ -47,14 +49,18 @@ class GermanForums {
 <td >','</tr></tbody></table>'),'',$posts2);
                $posts2 = preg_replace('/<\/a>\s*([ \w:]*<a href=\"[^"]+\">[^<]+<\/a>([ \w:]*))+[\s]+(<\/p><\/td><\/tr>)*/is', '</a>', $posts2);
                $posts2 = $this->removeHugeSpaces($posts2);
-               $posts2 = preg_replace('/<a href=\"(http:\/\/translate.google[^"]+)">/is', '\1</a>', $posts2);
-               $posts2 = explode('<b>Post subject:</b>',$posts2);
+               $posts2 = preg_replace('/<a href=\"(http:\/\/translate.google[^"]+|http:\/\/66.196.80.202\/babelfish\/trans[^"]+)">/is', '\1</a>', $posts2);
+               $posts2 = explode('<p class="topictitle">',$posts2);
                
                unset($posts2[0]);
+               //print_r($posts2);
                $posts = array();
                
                foreach($posts2 as $post){
+                //echo "posts == yes";
+                
                     $post = preg_split('/(<(a|b|td|p)( (class|name)=\"([^"]+?)\")*>|<\/(a|b|p|td)\s*>)+/is', $post);
+                    $post = preg_replace('/(?<=[^a-z])(\s+)\>(\s*)/im', '\1\2', $post);
                     $temp = array();
                     $thekey = 'p_____';
                     $keyloc = 0;
@@ -64,6 +70,7 @@ class GermanForums {
                         //for some reason, we might have a lapse and have something after the post key(the identity), we need to cut off after our identity.
                         $tvar = preg_match('/$p\d{5,10}/is', $val);
                         /**/
+                        $val = trim(preg_replace('/<\/?[a-z]+\s*>/im', '',$val));
                         if(strlen($val) > 0){
                             $temp[] = $val;
                             $keyloc++;
@@ -82,33 +89,28 @@ class GermanForums {
                     //ok now lets determine the important infos
                     //we are sure that our topic title is the first element
                     $post2 = array();
-                    $post2['link'] = $post[0];
-                    $post2['title'] = $post[1];
+                    //print_r($post);
+                    preg_match_all('/<a name="p(\d+)" id="p\1" \/?>/im', $post[0],$tempy);
+                    $post2['link'] = $post[3];
+                    $post2['title'] = $post[1].' - '.$post[4];
                     //we should look for the date, which usually in all cases is on the second element, but to be sure, lets use the 'posted' value detection
-                    $postedPosition = array_search("Posted:",$post);
-                    $post2['date'] = $post[$postedPosition+1];//we know the date will be immediately after posted.
+                    $postedPosition = array_search("Written:",$post);
+                    $post2['date'] = $post[6];//we know the date will be immediately after posted.
                     //fix the forum time into a standard we know
-                    $post2['date'] = preg_replace('/[A-Za-z]{3} ([a-zA-Z]{1,20}) (\d{1,2}), (\d{2,4}) (\d{2}):(\d{2})/i', '\3-\1-\2 \4:\5:00',$post2['date']);
-                    $months = array('January','February','March','April','May','June','July','August','September','October','November','December');
-                    $months2 = array('01','02','03','04','05','06','07','08','09',10,11,12);
+                    $post2['date'] = preg_replace('/[A-Za-z]{2,3} ([a-zA-Z]{1,20}) (\d{1,2}), (\d{2,4}) (\d{2}):(\d{2})/i', '\3-\1-\2 \4:\5:00',$post2['date']);
+                    $months = array('January','February','March','April','May','June','July','August','September','October','November','December','Apr');
+                    $months2 = array('01','02','03','04','05','06','07','08','09',10,11,12,'04');
                     $post2['date'] =str_replace($months,$months2, $post2['date']);
                     
                     //next we know the message follows the posted position. but before the p\d+ key.
                     //lets use our position we kept earlier for that.
-                    $temp = '';
-                    $keyloc = $keyloc-1;
-                    if($postedPosition+2 != $keyloc){
-                        for($x = $postedPosition+2; $x < $keyloc-0; $x++){
-                            $temp .= $post[$x].' ';
-                        }  
-                    }else{
-                        $temp = $post[$postedPosition+2];
-                    }
                     
-                    $temp = trim($temp);
-                    $post2['content'] = $temp;
+                    $post2['content'] = trim($post[7]);
+                    $post2['content'] = str_replace('<div class="quotetitle">','',$post2['content']);
+                    $post2['content'] = str_replace('<div class="quotecontent">','<br />',$post2['content']);
                     unset($temp);
-                    $post2['key'] = $post[$keyloc];
+                    $post2['key'] = $tempy[1][0];
+                    //print_r($post2);
                     //now the moment of truth, is this post identifyable?
                     if(!is_numeric(str_replace("p",'', $post2['key']))){
                         unset($post2);
