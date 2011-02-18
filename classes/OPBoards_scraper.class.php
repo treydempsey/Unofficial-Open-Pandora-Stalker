@@ -1,10 +1,10 @@
 <?php
 
 require_once('web_page.class.php');
-require_once('gp2x_scraper_result.class.php');
+require_once('OPBoards_scraper_result.class.php');
 require_once('stalker_sql_queries.class.php');
 
-class Gp2xScraper
+class OPBoardsScraper
 {
     public $db, $find_authors_for_source_st, $find_post_for_source_author_st, $find_property_for_source_author_st, $create_post_st;
     public $source_id, $current_url, $results, $search_base;
@@ -14,7 +14,7 @@ class Gp2xScraper
     public function __construct($args = array())
     {
         $this->web_page_class =  new WebPage;
-        $this->search_base = 'http://www.gp32x.com/board/index.php?app=core&module=search&do=user_posts&mid=';
+        $this->search_base = 'http://boards.openpandora.org/index.php?app=core&module=search&do=user_activity&search_app=&userMode=content&mid=';
 
         foreach($args as $arg => $value) {
             $this->$arg = $value;
@@ -49,48 +49,52 @@ class Gp2xScraper
                     flush2();
                     $page = new $this->web_page_class(array('url' => $this->current_url));
                     $html = $page->load_file();
-
+                    $thePosts = array();
                     # Each post is identified by a table row with a class of 'row1'
-                    foreach($html->find('tr.row1') as $row) {
-                        # The thread name is contained within a link with the title 'View result'
-                        $element = $row->find("a[title='View result']");
-                        if(count($element) == 1) {
-                            $topic = $element[0]->innertext;
+                    $count = 0;
+                    foreach($html->find('div.maintitle') as $row) {
+                        
+                        $tempish =  $row->last_child();
+                        //echo strip_tags($tempish->outertext)."<br />\n";
+                        $thePosts[$count]['topic'] = strip_tags($tempish->outertext);
+                        $count++;
+                    }
+                    $count = 0;
+                    //we need key, link, date posted,content,hash of content and title
+                    foreach($html->find('div.post_block') as $row) {
+                        $published = $row->find("abbr.published");
+                        if(preg_match("/^([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2})/", $published[0]->title, $m)) {
+                            $thePosts[$count]['posted'] = $m[1] . " " . $m[2];
                         }
-
-                        # An excerpt of the post is contained within a div with a class of 'message'
-                        $element = $row->find('div.message');
-                        if(count($element) == 1) {
-                            # The post link is contained within the div in a link with an image with a alt attribute of 'View Post'
-                            $child_element = $element[0]->find("img[alt='View Post']");
-                            if(count($child_element) == 1) {
-                                $link = $child_element[0]->parent->href;
-                                if(preg_match('/p__([0-9]+)/', $link, $m)) {
-                                    $key = $m[1];
-                                }
-                            }
-                            
-                            $exerpt = (string)$element[0]->innertext;
-                            $exerpt = preg_replace('/<div\s*><a href=\"http:\/\/www\.gp32x[^>]+><img[^>]+><\/a><\/div>/i', '', $exerpt);
-                            $exerpt = preg_replace('/(\'\s)+/i', '\'', $exerpt);
-                            $exerpt = preg_replace('/(&#39;)+/i', '&#39;', $exerpt);
-                            
-                        }
-
+                        //now for link and key
+                        $keyish = $row->find("span.post_id");
+                        $childofKey = $keyish[0]->first_child();
+                        $thePosts[$count]['link'] = $childofKey->href;
+                        $thePosts[$count]['key'] = str_replace("#", '', strip_tags($childofKey->outertext));
+                        //finally, the content.
+                        $post = $row->find("div.post");
+                        $thePosts[$count]['content'] = preg_replace("/<!--.*?-->/", "", trim($post[0]->innertext), -1);
+                        $count++;
+                    }
+                    
+                    foreach($thePosts as $postRow){
+                        extract($postRow);
                         if(isset($topic) && isset($key) && isset($link)) {
-                            array_push($this->results, new Gp2xScraperResult(array(
+                            array_push($this->results, new OPBoardsScraperResult(array(
                                 'web_page_class' => $this->web_page_class,
                                 'topic' => $topic,
                                 'key' => $key,
-                                'link' => $link
+                                'link' => $link,
+                                'content' => $content,
+                                'posted' => $posted
                             )));
                         }else{
                             echo 'Fail _'.isset($topic).'_'.isset($key).'_'.isset($link)."<br />\n";
                         }
                     }
+                    
                     $html->clear();
                 }
-
                 # Lookup each search result in the db, enrich and save if it doesn't exist
                 foreach($this->results as $result) {
                     //echo $result->key."<br /> \n";
@@ -110,6 +114,7 @@ class Gp2xScraper
                                 $result->key, $result->topic, $result->posted,
                                 $result->link, $result->content, md5($result->content.$result->topic)
                             ));
+                            //print_r($result);
                             /*echo "_";
                             print_r($this->create_post_st->errorCode());*/
                         }
@@ -117,12 +122,13 @@ class Gp2xScraper
                           $this->scrape_failures += 1;
                           echo "ERROR: Could not fetch post, reverting to exerpt on find all posts page. <br />\n";
                           echo "\t" . $result->link . "\n";
-                          
+                          /*
                             $this->create_post_st->execute(array(
                                 $author['source_id'], $author['author_id'],
                                 $result->key, $topic, date("Y-m-d H:i:sP"),//be like the IPB time stamp
                                 $link, $exerpt, md5($exerpt.$result->topic)
                             ));
+                          */
                         }
                     }
                     else {

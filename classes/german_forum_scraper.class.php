@@ -107,8 +107,8 @@ class GermanForums {
                     $post2['date'] = $post[6];//we know the date will be immediately after posted.
                     //fix the forum time into a standard we know
                     $post2['date'] = preg_replace('/[A-Za-z]{2,3} ([a-zA-Z]{1,20}) (\d{1,2}), (\d{2,4}) (\d{2}):(\d{2})/i', '\3-\1-\2 \4:\5:00',$post2['date']);
-                    $months = array('January','February','March','April','May','June','July','August','September','October','November','December','Apr');
-                    $months2 = array('01','02','03','04','05','06','07','08','09',10,11,12,'04');
+                    $months = array('January','February','March','April','May','June','July','August','September','October','November','December','Apr', 'Jul', 'Aug', "Sep", "Oct", "Nov",'Jun','Dec','Jan','Feb','Mar');
+                    $months2 = array('01','02','03','04','05','06','07','08','09',10,11,12,'04','07','08','09','10','11','06',12,'01','02','03');
                     $post2['date'] =str_replace($months,$months2, $post2['date']);
                     
                     //next we know the message follows the posted position. but before the p\d+ key.

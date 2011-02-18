@@ -9,6 +9,7 @@ set_include_path('classes');
 require_once('stalker_sql_queries.class.php');
 require_once('dev_blog_scraper.class.php');
 require_once('gp2x_scraper.class.php');
+require_once('OPBoards_scraper.class.php');
 require_once('pandora_press_scraper.class.php');
 require_once('twitter_scraper.class.php');
 require_once('youtube_scraper.class.php');
@@ -37,6 +38,7 @@ $dbinfo = unserialize(file_get_contents("dbinfo"));
 $db = new PDO('mysql:host='.$dbinfo['host'].';dbname='.$dbinfo['dbname'].'',
     $dbinfo['user'],
     $dbinfo['pass'] );
+
 unset($dbinfo);
 $new_posts = 0;
 $scrape_failures = 0;
@@ -48,7 +50,7 @@ $sources = $sources_st->fetchAll(PDO::FETCH_ASSOC);
 
 if(count($sources) > 0) {
     foreach($sources as $source) {
-        //if($source['source'] == 'Twitter'){
+        //if($source['source'] == 'OP Boards'){
             
         
         echo 'Scraping source ' . $source['source'] . "<br />\n";
@@ -67,11 +69,9 @@ if(count($sources) > 0) {
         //echo round(memory_get_usage()/1048576,3)."MB used<br />\n";
         flush2();
         unset($scraper);
-       // }
+        //}
 
     }
-}else{
-    echo "NO SOURCES";
 }
 
 

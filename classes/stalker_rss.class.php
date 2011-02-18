@@ -15,7 +15,7 @@ class StalkerRss
     public function __construct($db)
     {
         $this->db = $db;
-        $this->doc = new DOMDocument();
+        $this->doc = new DOMDocument("1.0","UTF-8");
         $this->doc->formatOutput = TRUE;
         $this->header();
         date_default_timezone_set('GMT');
@@ -60,6 +60,7 @@ class StalkerRss
                         $post['content'] = preg_replace('/<img[^>]+alt="View Post[^>]+>/i', '', $post['content']);
                         $post['content'] = preg_replace('/(<br *\/*>\s+)+/i', '<br />',trim($post['content']));
                         $post['content'] = preg_replace('/(<hr *\/*>\s+)+/i', '<hr />',$post['content']);
+                        $post['content'] = preg_replace('/[^\w\s\"\'\.\!\~\@\#\$\%\^\&\*\(\)\{\}\[\]\?\|\|\/\=\+\-\_\<\>\,\;\:]/i', ' ', $post['content']);
                         if(substr($post['content'],0,3) == '<br'){
                             $post['content'] = preg_replace('/<br *\/*>\s+/i', '',$post['content'], 1);
                         }
@@ -73,6 +74,12 @@ class StalkerRss
                             $post['topic'] = substr($post['topic'],0,100).'...';
                         }
                         //$post = array_map('utf8_encode',$post);
+                        $post['content'] = utf8_encode($post['content']);
+                        $post['content'] = iconv("UTF-8","ISO-8859-1//IGNORE", $post['content']);
+                        $post['content'] = iconv("ISO-8859-1","UTF-8//IGNORE", $post['content']);
+                        $post['content'] = iconv("UTF-8","UTF-8//IGNORE", $post['content']);//
+                        
+                        //$post['content'] = recode_string("us..flat",$post['content']);
                         $thash = md5($post['topic'].$post['content']);
                         if(!in_array($thash,$this->hashs)){
                             $this->hashs[] = $thash;
@@ -124,9 +131,10 @@ class StalkerRss
     function remove_accent($str){
       $a = array('À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'Ø', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'ß', 'à', 'á', 'â','â', 'ã', 'ä', 'å', 'æ', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', 'ø', 'ù', 'ú', 'û', 'ü', 'ý', 'ÿ', 'Ā', 'ā', 'Ă', 'ă', 'Ą', 'ą', 'Ć', 'ć', 'Ĉ', 'ĉ', 'Ċ', 'ċ', 'Č', 'č', 'Ď', 'ď', 'Đ', 'đ', 'Ē', 'ē', 'Ĕ', 'ĕ', 'Ė', 'ė', 'Ę', 'ę', 'Ě', 'ě', 'Ĝ', 'ĝ', 'Ğ', 'ğ', 'Ġ', 'ġ', 'Ģ', 'ģ', 'Ĥ', 'ĥ', 'Ħ', 'ħ', 'Ĩ', 'ĩ', 'Ī', 'ī', 'Ĭ', 'ĭ', 'Į', 'į', 'İ', 'ı', 'Ĳ', 'ĳ', 'Ĵ', 'ĵ', 'Ķ', 'ķ', 'Ĺ', 'ĺ', 'Ļ', 'ļ', 'Ľ', 'ľ', 'Ŀ', 'ŀ', 'Ł', 'ł', 'Ń', 'ń', 'Ņ', 'ņ', 'Ň', 'ň', 'ŉ', 'Ō', 'ō', 'Ŏ', 'ŏ', 'Ő', 'ő', 'Œ', 'œ', 'Ŕ', 'ŕ', 'Ŗ', 'ŗ', 'Ř', 'ř', 'Ś', 'ś', 'Ŝ', 'ŝ', 'Ş', 'ş', 'Š', 'š', 'Ţ', 'ţ', 'Ť', 'ť', 'Ŧ', 'ŧ', 'Ũ', 'ũ', 'Ū', 'ū', 'Ŭ', 'ŭ', 'Ů', 'ů', 'Ű', 'ű', 'Ų', 'ų', 'Ŵ', 'ŵ', 'Ŷ', 'ŷ', 'Ÿ', 'Ź', 'ź', 'Ż', 'ż', 'Ž', 'ž', 'ſ', 'ƒ', 'Ơ', 'ơ', 'Ư', 'ư', 'Ǎ', 'ǎ', 'Ǐ', 'ǐ', 'Ǒ', 'ǒ', 'Ǔ', 'ǔ', 'Ǖ', 'ǖ', 'Ǘ', 'ǘ', 'Ǚ', 'ǚ', 'Ǜ', 'ǜ', 'Ǻ', 'ǻ', 'Ǽ', 'ǽ', 'Ǿ', 'ǿ');
       $b = array('A', 'A', 'A', 'A', 'A', 'A', 'AE', 'C', 'E', 'E', 'E', 'E', 'I', 'I', 'I', 'I', 'D', 'N', 'O', 'O', 'O', 'O', 'O', 'O', 'U', 'U', 'U', 'U', 'Y', 's', 'a', 'a', 'a', 'a','a', 'a', 'a', 'ae', 'c', 'e', 'e', 'e', 'e', 'i', 'i', 'i', 'i', 'n', 'o', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u', 'y', 'y', 'A', 'a', 'A', 'a', 'A', 'a', 'C', 'c', 'C', 'c', 'C', 'c', 'C', 'c', 'D', 'd', 'D', 'd', 'E', 'e', 'E', 'e', 'E', 'e', 'E', 'e', 'E', 'e', 'G', 'g', 'G', 'g', 'G', 'g', 'G', 'g', 'H', 'h', 'H', 'h', 'I', 'i', 'I', 'i', 'I', 'i', 'I', 'i', 'I', 'i', 'IJ', 'ij', 'J', 'j', 'K', 'k', 'L', 'l', 'L', 'l', 'L', 'l', 'L', 'l', 'l', 'l', 'N', 'n', 'N', 'n', 'N', 'n', 'n', 'O', 'o', 'O', 'o', 'O', 'o', 'OE', 'oe', 'R', 'r', 'R', 'r', 'R', 'r', 'S', 's', 'S', 's', 'S', 's', 'S', 's', 'T', 't', 'T', 't', 'T', 't', 'U', 'u', 'U', 'u', 'U', 'u', 'U', 'u', 'U', 'u', 'U', 'u', 'W', 'w', 'Y', 'y', 'Y', 'Z', 'z', 'Z', 'z', 'Z', 'z', 's', 'f', 'O', 'o', 'U', 'u', 'A', 'a', 'I', 'i', 'O', 'o', 'U', 'u', 'U', 'u', 'U', 'u', 'U', 'u', 'U', 'u', 'A', 'a', 'AE', 'ae', 'O', 'o');
-      return $this->lastfixes($this->unallowedEntities(str_replace($a, $b, $this->Unaccent(html_entity_decode($str)))));
+      return $this->lastfixes($this->unallowedEntities(str_replace($a, $b, $this->Unaccent($str))));
     }
     function Unaccent($string){
+        $string = preg_replace('/\&(\w+);/i', '_:\1:_', $string);
         return html_entity_decode(preg_replace('~&([a-z]{1,2})(acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i', '$1', htmlentities($string, ENT_QUOTES, 'UTF-8')));
     }
     function unallowedEntities($string){
@@ -150,11 +158,13 @@ class StalkerRss
         return $filtered;
     }
     function lastfixes($input){
+        $input = preg_replace('/\&(\w+);/i', '_:\1:_', $input);
         $input = preg_replace('/([a-zA-Z]+)=\"\W([a-z_A-Z0-9#?\.\:\/]+)\W"/i', '\1="\2"',  $input);
         return $input;
     }
     function cleanPage($input){
-        //might be the longest function here actually... but it does work VERY wel.
+        //might be the longest function here actually... but it does work VERY well.
+        
         $input = $this->removeScripts($input);//take out scripts.
         $input = $this->removeHTMLStyling($input);//take out styles and such but retain id, clas, name, etc.
         $input = $this->removeHugeSpaces($input);//take out big whitespaces.
@@ -190,7 +200,7 @@ class StalkerRss
         $input = preg_replace('/\n+/ims', '',$input);
         $input = preg_replace('/<br[ a-zA-Z0-9\"\=\_]+>/i', '<br />',$input);//seriously, why would people style a br.. come on..
         //clean up the weirdos.
-        
+        $input = preg_replace('/_:(\w+):_/i', '&\1;',$input);
         return $input;
     }
 
@@ -248,7 +258,7 @@ class StalkerRss
         $item_author = $this->doc->createElement('dc:creator', $this->remove_accent($author.' - '.$source));
         $item_pubdate = $this->doc->createElement('pubDate', $pubdate);
         $item_description = $this->doc->createElement('description');
-        $item_description->appendChild($this->doc->createCDATASection($this->cleanPage($this->remove_accent($description))));
+        $item_description->appendChild($this->doc->createCDATASection($this->cleanPage($description)));
         $item->appendChild($item_title);
         $item->appendChild($item_author);
         $item->appendChild($item_link);
